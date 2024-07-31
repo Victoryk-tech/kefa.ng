@@ -6,30 +6,37 @@ const Footer = () => {
       <div className="px-2 md:px-4 lg:px-10 py-20 gap-y-10 flex flex-col sm:flex-row items-start justify-between w-full ">
         <div className="flex items-start justify-between w-full sm:pr-10 lg:pr-28">
           <div className="space-y-[24px] font-poppin">
-            <h1 className="font-medium text-[20px] leading-7">Support</h1>
+            <h1 className="font-medium text-[20px] leading-7">Need Help?</h1>
 
-            <p className="font-normal text-[16px]">hello@duexe.com</p>
-            <p className="font-normal text-[16px]">+234-708-000-344</p>
+            <p className="font-normal text-[16px]">Chat with us</p>
+            <p className="font-normal text-[16px]">Contact us</p>
+            <p className="font-normal text-[16px]">Help center</p>
           </div>
           <div className="space-y-[24px] font-poppin">
-            <h1 className="font-medium text-[20px] leading-7">Support</h1>
+            <h1 className="font-medium text-[20px] leading-7">Services</h1>
 
-            <p className="font-normal text-[16px]">hello@duexe.com</p>
-            <p className="font-normal text-[16px]">+234-708-000-344</p>
+            <p className="font-normal text-[16px]">Cart</p>
+            <p className="font-normal text-[16px]">Clothes</p>
+            <p className="font-normal text-[16px]">Bags</p>
+            <p className="font-normal text-[16px]">Hoodies</p>
           </div>
         </div>
         <div className="flex items-start justify-between w-full lg:pl-20 sm:pl-10">
           <div className="space-y-[24px] font-poppin">
-            <h1 className="font-medium text-[20px] leading-7">Support</h1>
+            <h1 className="font-medium text-[20px] leading-7">About Kefa</h1>
 
-            <p className="font-normal text-[16px]">hello@duexe.com</p>
-            <p className="font-normal text-[16px]">+234-708-000-344</p>
+            <p className="font-normal text-[16px]">About Us</p>
+            <p className="font-normal text-[16px]">Terms and Conditions</p>
+            <p className="font-normal text-[16px]">Payment Guidelines</p>
+            <p className="font-normal text-[16px]">Return Policy</p>
+            <p className="font-normal text-[16px]">Return $ Refund Policy</p>
           </div>
           <div className="space-y-[24px] font-poppin">
-            <h1 className="font-medium text-[20px] leading-7">Support</h1>
+            <h1 className="font-medium text-[20px] leading-7">Need Help?</h1>
 
-            <p className="font-normal text-[16px]">hello@duexe.com</p>
-            <p className="font-normal text-[16px]">+234-708-000-344</p>
+            <p className="font-normal text-[16px]">Chat with us</p>
+            <p className="font-normal text-[16px]">Contact us</p>
+            <p className="font-normal text-[16px]">Help center</p>
           </div>
         </div>
       </div>
