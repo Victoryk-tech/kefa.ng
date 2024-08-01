@@ -11,12 +11,18 @@ const Login = () => {
   const history = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let backendURL;
+  if (process.env.NODE_ENV === "production") {
+    backendURL = "https://kefa-ng.onrender.com/api/user";
+  } else {
+    backendURL = "http://localhost:8000/api/user";
+  }
 
   const submit = async (e) => {
     e.preventDefault();
     try {
       await axios
-        .post("http://localhost:8000/api/user", {
+        .post(`${backendURL}`, {
           email,
           password,
         })

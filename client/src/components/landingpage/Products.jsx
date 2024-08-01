@@ -5,6 +5,7 @@ const Products = () => {
   const [products, setProducts] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [visible, setVisible] = useState(4);
+
   let backendURL;
   if (process.env.NODE_ENV === "production") {
     backendURL = "https://kefa-ng.onrender.com/api/product";
