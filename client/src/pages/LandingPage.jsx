@@ -4,6 +4,7 @@ import Reviews from "../components/landingpage/Reviews";
 import Hero from "../components/landingpage/Hero";
 import { Outlet } from "react-router-dom";
 import TopbarProducts from "../components/landingpage/TopbarProducts";
+import Service from "../components/landingpage/Service";
 
 const LandingPage = () => {
   return (
@@ -24,7 +25,9 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+
       <Reviews />
+      <Service />
     </div>
   );
 };
