@@ -38,7 +38,7 @@ const Login = () => {
   return (
     <div>
       <HeadOption />
-      <section class="bg-gray-50 min-h-screen flex items-start pt-10 sm:pt-0 sm:items-center justify-center">
+      <section class="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
         <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div class="md:w-1/2 px-8 md:px-16">
             <h2 class="font-bold text-2xl text-[#6b4343]">Login</h2>
@@ -57,11 +57,6 @@ const Login = () => {
                   placeholder="Email"
                   className="outline-none bg-transparent"
                 />
-                <img
-                  src={<FaRegEyeSlash />}
-                  alt=""
-                  className=" text-xl bg-black text-black"
-                />
               </div>
 
               <div class="flex items-center justify-between p-2 rounded-xl border w-full bg-white">
@@ -73,11 +68,6 @@ const Login = () => {
                   }}
                   placeholder="Password"
                   className="outline-none bg-transparent"
-                />
-                <img
-                  src={<FaRegEyeSlash />}
-                  alt=""
-                  className=" text-xl bg-black text-black"
                 />
               </div>
               <input
