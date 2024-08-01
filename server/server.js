@@ -48,7 +48,7 @@ mongoose
 
 // routes
 app.get("/", (req, res) => {
-  res.send("whatever");
+  res.send("hello world");
 });
 
 // registration
