@@ -5,11 +5,13 @@ import Hero from "../components/landingpage/Hero";
 import { Outlet } from "react-router-dom";
 import TopbarProducts from "../components/landingpage/TopbarProducts";
 import Service from "../components/landingpage/Service";
+import FlashSales from "../components/landingpage/FlashSales";
 
 const LandingPage = () => {
   return (
     <div>
       <Hero />
+      <FlashSales />
 
       <div className="px-2 py-10 sm:px-4 lg:px-6 ">
         <div className="border-l-[24px] border-[#492C02] py-7 pl-4  font-inter">
