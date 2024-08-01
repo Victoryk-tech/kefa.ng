@@ -5,6 +5,7 @@ import axios from "axios";
 import { TbMailFilled } from "react-icons/tb";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import HeadOption from "../components/HeadOption";
 
 const Login = () => {
   const history = useNavigate();
@@ -36,6 +37,7 @@ const Login = () => {
   };
   return (
     <div>
+      <HeadOption />
       <section class="bg-gray-50 min-h-screen flex items-center justify-center">
         <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div class="md:w-1/2 px-8 md:px-16">

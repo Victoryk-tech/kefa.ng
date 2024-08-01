@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FaRegEyeSlash } from "react-icons/fa6";
+import HeadOption from "../components/HeadOption";
 
 const SignUp = () => {
   const history = useNavigate();
@@ -35,10 +36,11 @@ const SignUp = () => {
   }
   return (
     <div>
+      <HeadOption />
       <section class="bg-gray-50 min-h-screen flex items-center justify-center">
         <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div class="md:w-1/2 px-8 md:px-16">
-            <h2 class="font-bold text-2xl text-[#6b4343]">Sign In</h2>
+            <h2 class="font-bold text-2xl text-[#6b4343]">Sign Up</h2>
             <p class="text-xs mt-4 text-[#6b4343]">
               If you are already a member, easily log in
             </p>
@@ -95,7 +97,7 @@ const SignUp = () => {
             </div>
 
             <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#6b4343]">
-              Login with Google
+              SignUp with Google
             </button>
 
             <div class="mt-5 text-xs border-b border-[#6b4343] py-4 text-[#6b4343]">
