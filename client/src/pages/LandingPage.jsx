@@ -13,7 +13,7 @@ const LandingPage = () => {
       <Hero />
       <FlashSales />
 
-      <div className="px-2 py-10 sm:px-4 lg:px-6 ">
+      <div className="px-2 py-10 sm:px-4 lg:px-10 ">
         <div className="border-l-[24px] border-[#492C02] py-7 pl-4  font-inter">
           <h1 className="font-semibold text-[16px] text-[#492C02]">
             Our Products

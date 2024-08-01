@@ -6,6 +6,9 @@ export default {
       poppin: ["Poppins", "san-serif"],
       inter: ["Inter", "sans-serif"],
     },
+    // backgroundImage: {
+    //   login: "url('../../assets/login.png')",
+    // },
 
     extend: {},
   },
