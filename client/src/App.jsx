@@ -10,7 +10,12 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-import DashboardPage from "./pages/DashboardPage";
+
+import Layout from "./components/dashboard/Layout";
+import Conditional from "./components/Conditional";
+import Home from "./pages/DashboardPages/Home";
+import Clients from "./pages/DashboardPages/Clients";
+import MyProducts from "./pages/DashboardPages/MyProducts";
 
 const App = () => {
   return (
@@ -27,9 +32,15 @@ const App = () => {
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
-        <Route path="board" element={<DashboardPage />}></Route>
+        <Route path="board" element={<Layout />}>
+          <Route path="home" element={<Home />} />
+          <Route path="clients" element={<Clients />} />
+          <Route path="products" element={<MyProducts />} />
+        </Route>
       </Routes>
-      <Footer />
+      <Conditional>
+        <Footer />
+      </Conditional>
     </BrowserRouter>
   );
 };
