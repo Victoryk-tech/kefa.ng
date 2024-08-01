@@ -38,7 +38,7 @@ const Reviews = () => {
     <div className="py-4 px-4 md:px-10 w-full h-full">
       <div
         data-aos="fade-up"
-        className=" flex flex-col justify-center h-full items-center my-10 md:my-20"
+        className=" flex flex-col justify-center h-full items-center my-4 md:my-20 lg:my-0"
       >
         <div className="text-center py-4">
           <h1 className="font-bold md:text-2xl text-xl font-poppins">

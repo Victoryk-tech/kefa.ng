@@ -19,7 +19,7 @@ const LandingPage = () => {
 
         <div className="w-full">
           <TopbarProducts />
-          <div className="w-full py-8 sm:py-20">
+          <div className="w-full py-8 sm:py-16">
             <Outlet />
           </div>
         </div>
