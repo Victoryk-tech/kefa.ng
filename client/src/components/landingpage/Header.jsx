@@ -14,7 +14,7 @@ const Header = () => {
         </h1>
       </Link>
       <nav className="hidden  md:flex items-center justify-center gap-x-12">
-        <p>Shop</p>
+        <Link to="board">Shop</Link>
         <p>Reviews</p>
         <p>Products</p>
         <p>About</p>
