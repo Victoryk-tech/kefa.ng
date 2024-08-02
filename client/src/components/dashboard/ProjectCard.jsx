@@ -4,14 +4,14 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="p-6 bg-white rounded-xl space-y-5">
       <div>
-        <h1 className="text-xl font-semibold text-gray-700">{project.name}</h1>
+        <h1 className="text-xl font-semibold text-amber-950">{project.name}</h1>
         <p className="text-sm text-gray-500">{project.type}</p>
       </div>
       <p>
         <span className="text-xs p-2 rounded bg-gray-100">{project.date}</span>
       </p>
       <div className="w-full bg-gray-200 rounded-full h-2">
-        <div className="w-[40%] bg-indigo-500 rounded-full h-2"></div>
+        <div className="w-[40%] bg-amber-800 rounded-full h-2"></div>
       </div>
 
       <div className="flex justify-between items-center">

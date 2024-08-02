@@ -5,7 +5,7 @@ export const unleash = [
     title: "entreprenur",
     description:
       "Yes! No doubt, Kefa is Simply the best... good experience,just explore!",
-    image: `https://unsplash.com/photos/a-row-of-paper-bags-in-different-colors-jJVVdUcx3-M`,
+    image: `https://randomuser.me/api/portraits/men/23.jpg`,
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const unleash = [
     title: "Developer",
     description:
       "A good brand for shopping, fast delivery and quality products.",
-    image: `https://unsplash.com/photos/a-row-of-paper-bags-in-different-colors-jJVVdUcx3-M`,
+    image: `https://randomuser.me/api/portraits/women/40.jpg`,
   },
   {
     id: 3,

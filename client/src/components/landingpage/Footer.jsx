@@ -1,5 +1,6 @@
 import React from "react";
 import send from "../../assets/sendicon.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -25,7 +26,9 @@ const Footer = () => {
 
             <p className="font-normal text-[16px]">Cart</p>
             <p className="font-normal text-[16px]">Clothes</p>
-            <p className="font-normal text-[16px]">Bags</p>
+            <Link to="/board" className="font-normal text-[16px]">
+              Bags
+            </Link>
             <p className="font-normal text-[16px]">Hoodies</p>
           </div>
         </div>

@@ -9,7 +9,9 @@ const ProjectStatistics = ({ percentage, circleWidth }) => {
         <div className="space-y-4">
           <FaRegIdCard className="text-[34px] text-yellow-950" />
           <h1 className="text-[25px] font-semibold">N5000</h1>
-          <h2 className="text-[18px] font-semibold">Payments</h2>
+          <h2 className="text-[18px] font-semibold text-amber-950 ">
+            Payments
+          </h2>
         </div>
         <div></div>
       </div>

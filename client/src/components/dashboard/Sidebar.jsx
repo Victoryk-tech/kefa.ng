@@ -26,7 +26,7 @@ const Sidebar = () => {
       <div className="mb-8">
         <Link to="/" className="flex">
           <img src="/logo_mini.svg" className="w-8 flex md:hidden" />
-          <h1 className="font-bold text-[24px] font-inter hover:cursor-pointer text-[#492C02] hidden md:flex">
+          <h1 className="font-bold text-[24px] font-inter hover:cursor-pointer text-amber-900 hidden md:flex">
             Kefa.ng
           </h1>
         </Link>

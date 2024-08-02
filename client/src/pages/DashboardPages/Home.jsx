@@ -106,8 +106,11 @@ const Home = () => {
       <div>
         <div className="flex justify-between items-center py-4">
           <h1 className="text-lg font-semibold">Work Plan</h1>
-          <Link to="" className="text-sm underline text-indigo-600">
-            See all
+          <Link
+            to="/board/plans"
+            className="text-sm underline text-amber-800 hover:text-amber-900"
+          >
+            View all
           </Link>
         </div>
 
@@ -122,9 +125,9 @@ const Home = () => {
           <h1 className="text-lg font-semibold">Products</h1>
           <Link
             to="/board/products"
-            className="text-sm underline text-indigo-600"
+            className="text-sm underline  text-amber-800 hover:text-amber-900"
           >
-            See all
+            View all
           </Link>
         </div>
 
@@ -158,9 +161,9 @@ const Home = () => {
           <h1 className="text-lg font-semibold">Orders</h1>
           <Link
             to="/board/orders"
-            className="cursor-pointer text-sm underline text-indigo-600"
+            className="cursor-pointer text-sm underline  text-amber-800 hover:text-amber-900"
           >
-            See all
+            View all
           </Link>
         </div>
 
@@ -174,9 +177,9 @@ const Home = () => {
           <h1 className="text-lg font-semibold">Clients</h1>
           <Link
             to="/board/clients"
-            className="text-sm underline text-indigo-600"
+            className="text-sm underline text-amber-800 hover:text-amber-900"
           >
-            See all
+            View all
           </Link>
         </div>
 
