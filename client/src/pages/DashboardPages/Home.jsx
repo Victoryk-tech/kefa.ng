@@ -8,6 +8,7 @@ import HomeProduct from "../../components/dashboard/data/HomeProduct";
 import MemberCard from "../../components/dashboard/MemberCard";
 import Clients from "../../components/dashboard/Clients";
 import { Link } from "react-router-dom";
+import Loader from "../../components/Loader";
 
 const projects = [
   {
@@ -133,7 +134,7 @@ const Home = () => {
 
         <div>
           {isLoading ? (
-            "loading......."
+            <Loader />
           ) : (
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-2 items-center justify-center">
               {products.length > 0 ? (

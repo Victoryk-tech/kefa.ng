@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import AllProducts from "./database/AllProducts";
+import Loader from "../Loader";
 const Products = () => {
   const [products, setProducts] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -37,7 +38,7 @@ const Products = () => {
     <div className=" w-full">
       <div>
         {isLoading ? (
-          "loading......."
+          <Loader />
         ) : (
           <div className="space-y-8">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-start gap-y-8 sm:gap-y-20">
