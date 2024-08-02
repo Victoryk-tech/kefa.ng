@@ -14,11 +14,11 @@ const Sidebar = () => {
   };
   const SIDEBAR_LINKS = [
     { id: 1, path: "/board/home", name: "Dashboard", icon: LuBox },
-    { id: 2, path: "/members", name: "Members", icon: TbUsers },
+    { id: 2, path: "/board/orders", name: "Orders", icon: TbUsers },
     { id: 3, path: "/messages", name: "Messages", icon: LuMessageSquare },
     { id: 4, path: "/board/products", name: "Products", icon: FaSuitcase },
     { id: 5, path: "/board/clients", name: "Clients", icon: LuUser },
-    { id: 6, path: "/work", name: "Work Plan", icon: LuCalendar },
+    { id: 6, path: "/board/plans", name: "Work Plan", icon: LuCalendar },
   ];
   return (
     <div className="w-16 md:w-56 fixed left-0 top-0 z-10 h-screen boder-r pt-8 px-4 bg-white">

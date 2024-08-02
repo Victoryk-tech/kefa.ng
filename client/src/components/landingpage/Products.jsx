@@ -5,7 +5,7 @@ const Products = () => {
   const [products, setProducts] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [visible, setVisible] = useState(4);
-
+  console.log(process.env.NODE_ENV);
   let backendURL;
   if (process.env.NODE_ENV === "production") {
     backendURL = "https://kefa-ng.onrender.com/api/product";
@@ -17,6 +17,7 @@ const Products = () => {
       setIsLoading(true);
       const response = await axios.get(`${backendURL}`);
       console.log(response.data);
+      console.log(backendURL);
       setProducts(response.data);
       setIsLoading(false);
     } catch (error) {

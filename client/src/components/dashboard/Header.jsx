@@ -1,11 +1,16 @@
 import React from "react";
 import { GoBell } from "react-icons/go";
+import { useLocation } from "react-router-dom";
 const Header = () => {
+  const location = useLocation();
+  console.log(location);
   return (
-    <div className="sticky top-0 bg-[#eceaea] shadow-sm flex justify-between items-center p-4">
+    <div className="sticky top-0 bg-[#eceaea] shadow-sm flex justify-between items-center p-4 z-[999]">
       <div>
         <h1 className="text-xs">Welcome Back!</h1>
-        <p className="text-xl font-semibold text-[#492C02]">Alexia</p>
+        <p className="text-xl font-semibold text-[#492C02]">
+          {/* {location.state.email} */}
+        </p>
       </div>
       <div className="flex items-center space-x-5">
         <div className="hidden md:flex">

@@ -12,7 +12,9 @@ const Conditional = ({ children }) => {
       location.pathname === "/board/products" ||
       location.pathname === "/board/createProduct" ||
       location.pathname === "/board/customers" ||
-      location.pathname === "/board/clients"
+      location.pathname === "/board/clients" ||
+      location.pathname === "/board/orders" ||
+      location.pathname === "/board/plans"
     ) {
       setDisplay(false);
     } else {

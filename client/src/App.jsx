@@ -16,6 +16,9 @@ import Conditional from "./components/Conditional";
 import Home from "./pages/DashboardPages/Home";
 import Clients from "./pages/DashboardPages/Clients";
 import MyProducts from "./pages/DashboardPages/MyProducts";
+import NotFound from "./components/NotFound";
+import Orders from "./pages/DashboardPages/Orders";
+import WorkPlan from "./pages/DashboardPages/WorkPlan";
 
 const App = () => {
   return (
@@ -35,8 +38,11 @@ const App = () => {
         <Route path="board" element={<Layout />}>
           <Route path="home" element={<Home />} />
           <Route path="clients" element={<Clients />} />
+          <Route path="orders" element={<Orders />} />
           <Route path="products" element={<MyProducts />} />
+          <Route path="plans" element={<WorkPlan />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Conditional>
         <Footer />

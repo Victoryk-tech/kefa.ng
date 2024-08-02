@@ -4,6 +4,8 @@ import Platforms from "../../components/dashboard/Platforms";
 import ProjectCard from "../../components/dashboard/ProjectCard";
 import ClientCard from "../../components/dashboard/ClientCard";
 import MemberCard from "../../components/dashboard/MemberCard";
+import Clients from "../../components/dashboard/Clients";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
@@ -91,8 +93,10 @@ const Home = () => {
 
       <div>
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-lg font-semibold">Current Projects</h1>
-          <p className="text-sm underline text-indigo-600">See all</p>
+          <h1 className="text-lg font-semibold">Work Plan</h1>
+          <Link to="" className="text-sm underline text-indigo-600">
+            See all
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
@@ -103,8 +107,13 @@ const Home = () => {
 
       <div>
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-lg font-semibold">Current Clients</h1>
-          <p className="text-sm underline text-indigo-600">See all</p>
+          <h1 className="text-lg font-semibold">Products</h1>
+          <Link
+            to="/board/products"
+            className="text-sm underline text-indigo-600"
+          >
+            See all
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
@@ -114,8 +123,29 @@ const Home = () => {
 
       <div>
         <div className="flex justify-between items-center py-4">
-          <h1 className="text-lg font-semibold">Members</h1>
-          <p className="text-sm underline text-indigo-600">See all</p>
+          <h1 className="text-lg font-semibold">Orders</h1>
+          <Link
+            to="/board/orders"
+            className="cursor-pointer text-sm underline text-indigo-600"
+          >
+            See all
+          </Link>
+        </div>
+
+        <div className="">
+          <Clients />
+        </div>
+      </div>
+
+      <div>
+        <div className="flex justify-between items-center py-4">
+          <h1 className="text-lg font-semibold">Clients</h1>
+          <Link
+            to="/board/clients"
+            className="text-sm underline text-indigo-600"
+          >
+            See all
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
