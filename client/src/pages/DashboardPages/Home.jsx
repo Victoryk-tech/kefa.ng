@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import ProjectStastics from "../../components/dashboard/ProjectStatistics";
 import Platforms from "../../components/dashboard/Platforms";
 import ProjectCard from "../../components/dashboard/ProjectCard";
-import ClientCard from "../../components/dashboard/ClientCard";
+
+import HomeProduct from "../../components/dashboard/data/HomeProduct";
 import MemberCard from "../../components/dashboard/MemberCard";
 import Clients from "../../components/dashboard/Clients";
 import { Link } from "react-router-dom";
@@ -41,28 +43,7 @@ const projects = [
     progress: 6,
   },
 ];
-const clients = [
-  {
-    name: "ABC Corporation",
-    title: "CEO",
-    date: "2024-04-10T09:00:00Z",
-  },
-  {
-    name: "XYZ Company",
-    title: "Marketing Director",
-    date: "2024-03-20T14:30:00Z",
-  },
-  {
-    name: "123 Industries",
-    title: "Project Manager",
-    date: "2024-05-05T11:15:00Z",
-  },
-  {
-    name: "Tech Innovations Ltd.",
-    title: "CTO",
-    date: "2024-02-15T10:45:00Z",
-  },
-];
+
 const members = [
   {
     total_members: 4,
@@ -82,6 +63,37 @@ const members = [
   },
 ];
 const Home = () => {
+  const [products, setProducts] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+  const [visible, setVisible] = useState(4);
+
+  let backendURL;
+  if (process.env.NODE_ENV === "production") {
+    backendURL = "https://kefa-ng.onrender.com/api/product";
+  } else {
+    backendURL = "http://localhost:8000/api/product";
+  }
+  const getProducts = async () => {
+    try {
+      setIsLoading(true);
+      const response = await axios.get(`${backendURL}`);
+      console.log(response.data);
+      console.log(backendURL);
+      setProducts(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.log("error");
+    }
+  };
+  useEffect(() => {
+    getProducts();
+  }, []);
+  const showMore = () => {
+    setVisible((prevValue) => prevValue + 4);
+  };
+  const showAll = () => {
+    setVisible((prevValue) => prevValue + 4);
+  };
   return (
     <div className="p-5">
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4">
@@ -116,8 +128,28 @@ const Home = () => {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
-          {clients && clients.map((client) => <ClientCard client={client} />)}
+        <div>
+          {isLoading ? (
+            "loading......."
+          ) : (
+            <div className="grid grid-cols-2 xl:grid-cols-4 gap-2 items-center justify-center">
+              {products.length > 0 ? (
+                products.slice(0, visible).map((product, index) => {
+                  return (
+                    <div className="">
+                      <HomeProduct
+                        key={index}
+                        Product={product}
+                        getProducts={getProducts}
+                      />
+                    </div>
+                  );
+                })
+              ) : (
+                <div>There is no message</div>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

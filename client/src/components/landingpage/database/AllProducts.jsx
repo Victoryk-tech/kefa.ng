@@ -28,7 +28,7 @@ const AllProducts = ({ Product, getProducts }) => {
         <div className="flex items-center justify-between">
           <div>
             <p className="text-[14px] md:text-[16px] text-[#DB4444]">
-              ${amount}
+              N{amount}
             </p>
             {/* <p className="text-[14px] md:text-[16px] line-through">
           ${oldprice}
