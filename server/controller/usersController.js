@@ -1,6 +1,17 @@
 const reg = require("../models/regModal");
 const asyncHandler = require("express-async-handler");
 
+// all users
+const getUsers = asyncHandler(async (req, res) => {
+  try {
+    const users = await reg.find({});
+
+    res.status(200).json(users);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
+  }
+});
 // login
 
 const getLogin = asyncHandler(async (req, res) => {
@@ -41,4 +52,4 @@ const postSigin = asyncHandler(async (req, res) => {
     res.json("fail");
   }
 });
-module.exports = { getLogin, postSigin };
+module.exports = { getLogin, postSigin, getUsers };
