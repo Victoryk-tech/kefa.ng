@@ -26,9 +26,15 @@ const Footer = () => {
 
             <p className="font-normal text-[16px]">Cart</p>
             <p className="font-normal text-[16px]">Clothes</p>
-            <Link to="/board" className="font-normal text-[16px]">
-              Bags
-            </Link>
+
+            <p>
+              {" "}
+              <Link to="/board" className="font-normal text-[16px]">
+                {" "}
+                Bags{" "}
+              </Link>
+            </p>
+
             <p className="font-normal text-[16px]">Hoodies</p>
           </div>
         </div>
