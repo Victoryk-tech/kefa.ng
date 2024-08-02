@@ -30,8 +30,11 @@ const Clients = () => {
           </thead>
           <tbody className="divide-y divide-gray-100">
             <tr>
-              <td className="w-20 p-3 text-sm text-gray-700">
-                <a href="#" className="hover:underline font-bold text-blue-500">
+              <td className="w-20 p-3 text-sm text-amber-700">
+                <a
+                  href="#"
+                  className="hover:underline font-bold text-amber-700"
+                >
                   10545
                 </a>
               </td>
