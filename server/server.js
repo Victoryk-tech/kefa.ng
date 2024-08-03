@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+import rateLimitMiddleware from "./middleware/rateLimit";
 const errorMiddleware = require("./middleware/errMiddleware");
-
+import authRoute from "./routes/authRoutes";
 const productRoutes = require("./routes/productRoutes");
 const usersRoute = require("./routes/usersRoute");
 const app = express();
@@ -18,7 +18,7 @@ const MONGO_URL = process.env.MONGO_URL;
 
 //browsers to access this api via cors
 const grantAccess = {
-  origin: "http://localhost:5173",
+  origin: ["http://localhost:5173",'https://kefa-ng-gpnr.vercel.app'];
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -33,6 +33,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //routes
 app.use("/api/product", productRoutes);
 app.use("/api/user", usersRoute);
+app.use("/api/auth", authRoute);
 
 //connect to mongoose
 mongoose.set("strictQuery", false);
