@@ -23,7 +23,7 @@ const getUser = async (req, res, next) => {
     if (user) {
       res.status(200).json(user);
     }
-  } catch (err) {
+  } catch (error) {
     res.status(500);
     throw new Error(error.message);
   }
@@ -35,8 +35,9 @@ const getUsersCount = async (req, res, next) => {
     const users = await reg.find({}).count();
 
     res.status(200).json(users);
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
   }
 };
 

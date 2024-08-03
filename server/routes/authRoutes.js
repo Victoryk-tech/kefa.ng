@@ -1,11 +1,11 @@
-import express from "express";
-import {
+const express = require("express");
+const {
   Login,
   Logout,
   Register,
   getLoginStatus,
-} from "../controller/authController.js";
-import rateLimitMiddleware from "../middleware/rateLimit.js";
+} = require("../controller/authController.js");
+
 const router = express.Router();
 
 router.post("/login", Login);
@@ -13,4 +13,4 @@ router.post("/register", Register); //rateLimitMiddleware,
 router.get("/getLoginStatus", getLoginStatus);
 router.get("/logout", Logout); //verifyJWT,
 
-export default router;
+module.export = router;

@@ -1,6 +1,6 @@
-import User from "../models/regModal";
-import bcryptjs from "bcryptjs";
-import jwt from "jsonwebtoken";
+const User = require("../models/regModal");
+const bcryptjs = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 // const cookieConfig = {
 //   httpOnly: true,
@@ -10,7 +10,7 @@ import jwt from "jsonwebtoken";
 // };
 
 //register
-export const Register = async (req, res, next) => {
+const Register = async (req, res, next) => {
   const { username, email, password, role } = req.body;
 
   try {
@@ -55,13 +55,14 @@ export const Register = async (req, res, next) => {
         .header("authorization", `Bearer ${token}`)
         .json({ user, token });
     }
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
   }
 };
 
 //loginUser
-export const Login = async (req, res, next) => {
+const Login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
 
@@ -99,13 +100,14 @@ export const Login = async (req, res, next) => {
         .status(201)
         .json({ user, token });
     }
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
   }
 };
 
 //Login status
-export const getLoginStatus = async (req, res, next) => {
+const getLoginStatus = async (req, res, next) => {
   const token = req.cookies.token;
   try {
     if (!token) {
@@ -120,8 +122,9 @@ export const getLoginStatus = async (req, res, next) => {
     } else {
       res.json(false);
     }
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
   }
 };
 
@@ -155,7 +158,7 @@ export const getLoginStatus = async (req, res, next) => {
 // };
 
 //logout
-export const Logout = async (req, res, next) => {
+const Logout = async (req, res, next) => {
   try {
     const cookies = req.cookies;
     if (!cookies?.token) {
@@ -164,7 +167,9 @@ export const Logout = async (req, res, next) => {
       res.clearCookie("token", cookieConfig);
       res.json({ message: "Cookie Cleared" });
     }
-  } catch (err) {
-    next(err);
+  } catch (error) {
+    res.status(500);
+    throw new Error(error.message);
   }
 };
+module.exports = { Logout, Login, getLoginStatus, Register };

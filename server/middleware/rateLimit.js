@@ -1,4 +1,4 @@
-import setRateLimit from "express-rate-limit";
+const setRateLimit = require("express-rate-limit");
 
 // Rate limit middleware
 const rateLimitMiddleware = setRateLimit({
@@ -8,4 +8,4 @@ const rateLimitMiddleware = setRateLimit({
   headers: true,
 });
 
-export default rateLimitMiddleware;
+module.export = rateLimitMiddleware;
