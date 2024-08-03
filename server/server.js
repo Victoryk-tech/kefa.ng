@@ -17,9 +17,24 @@ const FRONTEND = process.env.FRONTEND;
 const MONGO_URL = process.env.MONGO_URL;
 
 //browsers to access this api via cors
+
+const allowedOrigin = [
+  "https://kefa-ng-gpnr.vercel.app",
+  "http://localhost:5173",
+  "http://localhost:3000",
+];
 const grantAccess = {
-  origin: ["http://localhost:5173",'https://kefa-ng-gpnr.vercel.app'];
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  origin: (origin, callback) => {
+    if (allowedOrigin.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  optionsSuccessStatus: 200,
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+  credentials: true,
+  preflightContinue: false,
 };
 
 //middleware
