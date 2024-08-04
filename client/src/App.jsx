@@ -21,6 +21,7 @@ import Orders from "./pages/DashboardPages/Orders";
 import WorkPlan from "./pages/DashboardPages/WorkPlan";
 import Create from "./pages/DashboardPages/Create";
 import Messages from "./pages/DashboardPages/Messages";
+import ProductDetails from "./components/landingpage/ProductDetails";
 
 const App = () => {
   return (
@@ -34,6 +35,10 @@ const App = () => {
         </Route>
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
+        <Route
+          path="/products/productDetails/:id"
+          element={<ProductDetails />}
+        />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
