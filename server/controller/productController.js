@@ -2,40 +2,37 @@ const Product = require("../models/productModal");
 const asyncHandler = require("express-async-handler");
 
 //get all blogs
-const getProducts = asyncHandler(async (req, res) => {
+const getProducts = asyncHandler(async (req, res, next) => {
   try {
     const product = await Product.find({});
 
     res.status(200).json(product);
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 });
 
 //blog by id
-const getProduct = asyncHandler(async (req, res) => {
+const getProduct = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findById(id);
     res.status(200).json(product);
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 });
 
-const createProducts = asyncHandler(async (req, res) => {
+const createProducts = asyncHandler(async (req, res, next) => {
   try {
     const product = await Product.create(req.body);
     console.log(product);
     res.status(200).json(product);
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 });
-const updateProducts = asyncHandler(async (req, res) => {
+const updateProducts = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findByIdAndUpdate(id, req.body);
@@ -46,12 +43,11 @@ const updateProducts = asyncHandler(async (req, res) => {
     }
     const updatedProduct = await Product.findById(id);
     res.status(200).json(updatedProduct);
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 });
-const deleteProduct = asyncHandler(async (req, res) => {
+const deleteProduct = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const product = await Product.findByIdAndDelete(id);
@@ -62,9 +58,8 @@ const deleteProduct = asyncHandler(async (req, res) => {
     }
 
     res.status(200).json(product);
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 });
 module.exports = {

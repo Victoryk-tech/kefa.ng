@@ -6,6 +6,8 @@ const {
   getLoginStatus,
 } = require("../controller/authController.js");
 
+const upload = require("../utility/multerConfig");
+
 const router = express.Router();
 
 router.post("/login", Login);
@@ -13,4 +15,4 @@ router.post("/register", Register); //rateLimitMiddleware,
 router.get("/getLoginStatus", getLoginStatus);
 router.get("/logout", Logout); //verifyJWT,
 
-module.export = router;
+module.exports = router;

@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const rateLimitMiddleware = require("./middleware/rateLimit");
+const rateLimit = require("./middleware/rateLimit");
 const errorMiddleware = require("./middleware/errMiddleware");
 const authRoute = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
@@ -44,12 +44,12 @@ app.use(errorMiddleware);
 app.use(cors(grantAccess));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(rateLimitMiddleware);
+app.use(rateLimit);
 
 //routes
 app.use("/api/product", productRoutes);
 app.use("/api/user", usersRoute);
-//app.use("/api/auth", authRoute);
+app.use("/api/auth", authRoute);
 
 //connect to mongoose
 mongoose.set("strictQuery", false);

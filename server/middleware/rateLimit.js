@@ -8,4 +8,4 @@ const rateLimitMiddleware = setRateLimit({
   headers: true,
 });
 
-module.export = rateLimitMiddleware;
+module.exports = rateLimitMiddleware;

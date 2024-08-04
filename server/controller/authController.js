@@ -55,9 +55,8 @@ const Register = async (req, res, next) => {
         .header("authorization", `Bearer ${token}`)
         .json({ user, token });
     }
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -100,9 +99,8 @@ const Login = async (req, res, next) => {
         .status(201)
         .json({ user, token });
     }
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -122,9 +120,8 @@ const getLoginStatus = async (req, res, next) => {
     } else {
       res.json(false);
     }
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 };
 
@@ -158,7 +155,7 @@ const getLoginStatus = async (req, res, next) => {
 // };
 
 //logout
-const Logout = async (req, res, next) => {
+const Logout = async (req, res) => {
   try {
     const cookies = req.cookies;
     if (!cookies?.token) {
@@ -167,9 +164,8 @@ const Logout = async (req, res, next) => {
       res.clearCookie("token", cookieConfig);
       res.json({ message: "Cookie Cleared" });
     }
-  } catch (error) {
-    res.status(500);
-    throw new Error(error.message);
+  } catch (err) {
+    next(err);
   }
 };
 module.exports = { Logout, Login, getLoginStatus, Register };
