@@ -18,7 +18,8 @@ const ConditionRoute = ({ children }) => {
       location.pathname === "/work" ||
       location.pathname === "/board/orders" ||
       location.pathname === "/board/plans" ||
-      location.pathname === "/board/create"
+      location.pathname === "/board/create" ||
+      location.pathname === "/board/messages"
     ) {
       setDisplay(false);
     } else {

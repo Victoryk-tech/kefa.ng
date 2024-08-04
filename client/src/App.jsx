@@ -20,6 +20,7 @@ import NotFound from "./components/NotFound";
 import Orders from "./pages/DashboardPages/Orders";
 import WorkPlan from "./pages/DashboardPages/WorkPlan";
 import Create from "./pages/DashboardPages/Create";
+import Messages from "./pages/DashboardPages/Messages";
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="orders" element={<Orders />} />
           <Route path="products" element={<MyProducts />} />
           <Route path="create" element={<Create />} />
+          <Route path="messages" element={<Messages />} />
           <Route path="plans" element={<WorkPlan />} />
         </Route>
         <Route path="*" element={<NotFound />} />

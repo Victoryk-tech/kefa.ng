@@ -9,6 +9,9 @@ const SignUp = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
+
   let backendURL;
   if (process.env.NODE_ENV === "production") {
     backendURL = "https://kefa-ng.onrender.com/api/user/signup";
@@ -24,12 +27,16 @@ const SignUp = () => {
         .post(`${backendURL}`, {
           email,
           password,
+          username,
+          profilePicture,
         })
         .then((res) => {
           if (res.data == "exist") {
             alert("User already exists");
           } else if (res.data == "notexist") {
-            history("/board/home", { state: { password, email } });
+            history("/board/home", {
+              state: { password, email, username, profilePicture },
+            });
           }
         })
         .catch((e) => {
@@ -53,6 +60,19 @@ const SignUp = () => {
 
             <form action="POST" class="flex flex-col gap-4">
               <div class="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
+                <input
+                  type="text"
+                  name="username"
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                  }}
+                  autoComplete="on"
+                  autoSave="on"
+                  placeholder="Name"
+                  className="outline-none bg-transparent"
+                />
+              </div>
+              <div class="bg-white flex items-center justify-between p-2 rounded-xl border w-full">
                 <input
                   type="email"
                   name="email"
@@ -113,7 +133,7 @@ const SignUp = () => {
 
           <div class="md:block hidden w-1/2">
             <img
-              src="https://images.unsplash.com/photo-1616606103915-dea7be788566?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+              src="https://images.unsplash.com/photo-1504198458649-3128b932f49e?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""
             />
           </div>

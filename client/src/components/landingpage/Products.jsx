@@ -29,7 +29,7 @@ const Products = () => {
     getProducts();
   }, []);
   const showMore = () => {
-    setVisible((prevValue) => prevValue + 4);
+    setVisible((prevValue) => prevValue + 5);
   };
   const showAll = () => {
     setVisible((prevValue) => prevValue + 4);
@@ -41,7 +41,7 @@ const Products = () => {
           <Loader />
         ) : (
           <div className="space-y-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 items-start justify-start gap-y-8 sm:gap-y-20">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-start justify-start gap-y-8 sm:gap-y-16">
               {products.length > 0 ? (
                 products.slice(0, visible).map((product, index) => {
                   return (

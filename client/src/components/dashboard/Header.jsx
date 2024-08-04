@@ -1,5 +1,8 @@
 import React from "react";
+import { CiSettings } from "react-icons/ci";
 import { GoBell } from "react-icons/go";
+import { LuLogOut } from "react-icons/lu";
+import { RiFileSettingsFill } from "react-icons/ri";
 import { useLocation } from "react-router-dom";
 const Header = () => {
   const location = useLocation();
@@ -9,7 +12,7 @@ const Header = () => {
       <div>
         <h1 className="text-xs">Welcome Back!</h1>
         <p className="text-xl font-semibold text-[#492C02]">
-          {/* {location.state.email} */}
+          {/* {location.state.username} */}
         </p>
       </div>
       <div className="flex items-center space-x-5">
@@ -27,11 +30,43 @@ const Header = () => {
               9
             </span>
           </button>
-          <img
-            className="w-8 h-8 rounded-full border-4 border-[#492C02]"
-            src="https://randomuser.me/api/portraits/women/50.jpg"
-            alt=""
-          />
+          <div className="group relative">
+            <img
+              className="w-8 h-8 rounded-full border-4 border-[#492C02]"
+              src="https://randomuser.me/api/portraits/women/50.jpg"
+              alt=""
+            />
+
+            <div className="hidden absolute top-10 right-0 group-hover:block bg-white py-2 px-5 rounded-md">
+              <div className="space-y-3">
+                <div className="flex flex-col items-center justify-center space-y-1 cursor-pointer">
+                  <img
+                    className="w-10 h-10 rounded-full border-4 border-[#492C02]"
+                    src="https://randomuser.me/api/portraits/women/50.jpg"
+                    alt=""
+                  />
+                  <h1 className=" text-nowrap text-amber-800 text-sm font-bold">
+                    Anna Jones
+                  </h1>
+                  <p className="text-xs font-semibold">Admin</p>
+                </div>
+                <div space-y-1>
+                  <div className="cursor-pointer px-2 flex items-center justify-center gap-x-3">
+                    <CiSettings className="text-amber-800" />
+                    <p className="text-sm text-amber-950 hover:underline">
+                      Settings
+                    </p>
+                  </div>
+                  <div className="cursor-pointer px-2 flex items-center justify-center gap-x-3">
+                    <LuLogOut className="text-amber-800 text-sm" />
+                    <p className="text-sm text-amber-950 hover:underline">
+                      Logout
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

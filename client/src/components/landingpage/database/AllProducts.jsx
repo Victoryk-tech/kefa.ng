@@ -14,7 +14,7 @@ const AllProducts = ({ Product, getProducts }) => {
     toast.success("product added successfully");
   };
   return (
-    <div className="flex flex-col justify-start items-start bg-white rounded-sm shadow-md hover:shadow-lg w-[160px] sm:w-[230px] h-[240px] hover:scale-95 ease-in-out transition-all">
+    <div className="flex flex-col justify-start items-start bg-white rounded-sm shadow-sm hover:shadow-lg w-[160px] sm:w-[230px] lg:w-[190px] lg:h-[193px] h-[240px] hover:scale-95 ease-in-out transition-all">
       <div className="flex items-center justify-center w-full h-1/2">
         <Link>
           <img src={image} alt="" className="w-full h-full object-contain" />
