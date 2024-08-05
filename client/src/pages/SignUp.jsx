@@ -46,7 +46,12 @@ const SignUp = () => {
       userData.email = userData.email.toLowerCase(); //convert email to lower case
       await Register(userData);
       setLoading(false);
-      navigate("/board");
+      if (role === "customer") {
+        navigate("/");
+      } else {
+        navigate("/board");
+      }
+
       location.reload();
       toast.success("Registered Successfully");
     } catch (error) {

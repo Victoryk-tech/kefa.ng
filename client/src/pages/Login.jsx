@@ -90,7 +90,7 @@ const Login = () => {
       userData.email = userData.email.toLowerCase();
       await Login(userData);
       setLoading(false);
-      navigate("/board");
+      navigate("/");
       location.reload();
       toast.success("Logged in Successfully");
     } catch (error) {
