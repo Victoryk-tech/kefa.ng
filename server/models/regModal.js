@@ -24,7 +24,7 @@ const registerSchema = mongoose.Schema(
     password: {
       type: String,
       required: [true, "Please add a password!"],
-      validate: [validator.isStrongPassword, "Please use a strong password!"],
+      //validate: [validator.isStrongPassword, "Please use a strong password!"],
       trim: true,
     },
     profilePicture: {
