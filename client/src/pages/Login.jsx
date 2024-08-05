@@ -1,86 +1,155 @@
-import React, { useState } from "react";
-import backgrd from "../assets/login.jpg";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
-import { TbMailFilled } from "react-icons/tb";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { FaRegEyeSlash } from "react-icons/fa6";
+// import React, { useState } from "react";
+// import backgrd from "../assets/login.jpg";
+// import { Link, useNavigate } from "react-router-dom";
+// import axios from "axios";
+// import { TbMailFilled } from "react-icons/tb";
+// import { MdOutlineRemoveRedEye } from "react-icons/md";
+// import { FaRegEyeSlash } from "react-icons/fa6";
 import HeadOption from "../components/HeadOption";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+//import { Logo } from "../component/Logo";
+import { CiDark, CiLight } from "react-icons/ci";
+import { LuEye, LuEyeOff } from "react-icons/lu";
+import { UserAuth } from "../components/context/AuthContext";
 
+const initialState = {
+  email: "",
+  password: "",
+};
 const Login = () => {
-  const history = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  let backendURL;
-  if (process.env.NODE_ENV === "production") {
-    backendURL = "https://kefa-ng.onrender.com/api/user";
-  } else {
-    backendURL = "http://localhost:8000/api/user";
-  }
+  // const history = useNavigate();
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // let backendURL;
+  // if (process.env.NODE_ENV === "production") {
+  //   backendURL = "https://kefa-ng.onrender.com/api/user";
+  // } else {
+  //   backendURL = "http://localhost:8000/api/user";
+  // }
 
-  const submit = async (e) => {
+  // const submit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     await axios
+  //       .post(`${backendURL}`, {
+  //         email,
+  //         password,
+  //       })
+  //       .then((res) => {
+  //         if (res.data == "exist") {
+  //           history("/board/home", { state: { password, email } });
+  //         } else if (res.data == "notexist") {
+  //           alert("User have not sign up");
+  //         }
+  //       })
+  //       .catch((e) => {
+  //         alert("wrong details");
+  //         console.log(e);
+  //       });
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // };
+
+  const [formData, setFormData] = useState(initialState);
+  const [darkMode, setDarkMode] = useState(false);
+  const { email, password } = formData;
+  const { Login } = UserAuth();
+  const navigate = useNavigate();
+  const [viewPwd, setViewPwd] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleViewPassword = () => {
+    setViewPwd(!viewPwd);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      await axios
-        .post(`${backendURL}`, {
-          email,
-          password,
-        })
-        .then((res) => {
-          if (res.data == "exist") {
-            history("/board/home", { state: { password, email } });
-          } else if (res.data == "notexist") {
-            alert("User have not sign up");
-          }
-        })
-        .catch((e) => {
-          alert("wrong details");
-          console.log(e);
-        });
-    } catch (e) {
-      console.log(e);
+      const userData = {
+        email,
+        password,
+      };
+
+      userData.email = userData.email.toLowerCase();
+      await Login(userData);
+      setLoading(false);
+      navigate("/board");
+      location.reload();
+      toast.success("Logged in Successfully");
+    } catch (error) {
+      setLoading(false);
+      setErrorMsg(error.response.data.message);
+      toast.error(error.response.data.message);
     }
   };
+
   return (
     <div>
       <HeadOption />
       <section class="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
         <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div class="md:w-1/2 px-8 md:px-16">
-            <h2 class="font-bold text-2xl text-[#6b4343]">Login</h2>
+            <h2 class="font-bold text-2xl text-[#6b4343]">Welcome Back</h2>
             <p class="text-xs mt-4 text-[#6b4343]">
               If you are already a member, easily log in
             </p>
 
-            <form action="POST" class="flex flex-col gap-4">
+            <form onSubmit={handleLogin} class="flex flex-col gap-4">
               <div class="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
                 <input
                   type="email"
                   name="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  value={email}
+                  onChange={handleChange}
                   placeholder="Email"
                   className="outline-none bg-transparent"
+                  required
                 />
               </div>
 
               <div class="flex items-center justify-between p-2 rounded-xl border w-full bg-white">
                 <input
-                  type="password"
+                  type={viewPwd ? "password" : "text"}
+                  id="changePwd"
+                  value={password}
                   name="password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
+                  onChange={handleChange}
+                  required
                   placeholder="Password"
                   className="outline-none bg-transparent"
                 />
+                <span
+                  onClick={handleViewPassword}
+                  className=" text-brown transition-transform  duration-300 cursor-pointer"
+                >
+                  {viewPwd ? <LuEyeOff /> : <LuEye />}
+                </span>
               </div>
-              <input
+              <button
+                disabled={loading}
                 type="submit"
-                onClick={submit}
                 class="bg-[#6b4343] hover:bg-transparent hover:text-[#6b4343] hover:border-[#6b4343] hover:border-[1px] transition-all ease-out rounded-xl text-white py-2 hover:scale-100 duration-300"
-              />
+              >
+                {" "}
+                {loading ? "Loading...Please wait!" : "LOGIN"}
+              </button>
             </form>
 
             <div class="mt-6 grid grid-cols-3 items-center text-gray-400">

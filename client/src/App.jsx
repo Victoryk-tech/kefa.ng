@@ -10,7 +10,7 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
-
+import "react-toastify/dist/ReactToastify.css";
 import Layout from "./components/dashboard/Layout";
 import Conditional from "./components/Conditional";
 import Home from "./pages/DashboardPages/Home";
@@ -22,6 +22,8 @@ import WorkPlan from "./pages/DashboardPages/WorkPlan";
 import Create from "./pages/DashboardPages/Create";
 import Messages from "./pages/DashboardPages/Messages";
 import ProductDetails from "./components/landingpage/ProductDetails";
+import { ToastContainer, toast } from "react-toastify";
+import { RequireAuth } from "./components/RequireAuth";
 
 const App = () => {
   return (
@@ -43,19 +45,22 @@ const App = () => {
         <Route path="login" element={<Login />} />
 
         <Route path="board" element={<Layout />}>
-          <Route path="home" element={<Home />} />
-          <Route path="clients" element={<Clients />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="products" element={<MyProducts />} />
-          <Route path="create" element={<Create />} />
-          <Route path="messages" element={<Messages />} />
-          <Route path="plans" element={<WorkPlan />} />
+          <Route element={<RequireAuth />}>
+            <Route path="home" element={<Home />} />
+            <Route path="clients" element={<Clients />} />
+            <Route path="orders" element={<Orders />} />
+            <Route path="products" element={<MyProducts />} />
+            <Route path="create" element={<Create />} />
+            <Route path="messages" element={<Messages />} />
+            <Route path="plans" element={<WorkPlan />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Conditional>
         <Footer />
       </Conditional>
+      <ToastContainer autoClose={1000} />
     </BrowserRouter>
   );
 };

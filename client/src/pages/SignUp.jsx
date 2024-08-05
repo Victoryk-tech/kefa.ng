@@ -1,52 +1,61 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaRegEyeSlash } from "react-icons/fa6";
+
+import { LuEye, LuEyeOff } from "react-icons/lu";
+
+import { UserAuth } from "../components/context/AuthContext";
+import { toast } from "react-toastify";
 import HeadOption from "../components/HeadOption";
 
 const SignUp = () => {
-  const history = useNavigate();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
+  const [role, setRole] = useState("customer");
+  const navigate = useNavigate();
+  const [viewPwd, setViewPwd] = useState(false);
+  const errRef = useRef();
+  const { Register } = UserAuth();
+  const [loading, setLoading] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
-  const [profilePicture, setProfilePicture] = useState("");
+  const handleRole = (e) => {
+    setRole(e.target.value);
+  };
 
-  let backendURL;
-  if (process.env.NODE_ENV === "production") {
-    backendURL = "https://kefa-ng.onrender.com/api/user/signup";
-  } else {
-    backendURL = "http://localhost:8000/api/user/signup";
-  }
+  const togglePwd = () => {
+    const changePwd = document.getElementById("Viewpwd");
+    const isPassword = changePwd.getAttribute("type") === "password";
 
-  async function submit(e) {
+    changePwd.setAttribute("type", isPassword ? "text" : "password");
+    setViewPwd(!viewPwd);
+  };
+
+  const handleRegister = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
-      await axios
-        .post(`${backendURL}`, {
-          email,
-          password,
-          username,
-          profilePicture,
-        })
-        .then((res) => {
-          if (res.data == "exist") {
-            alert("User already exists");
-          } else if (res.data == "notexist") {
-            history("/board/home", {
-              state: { password, email, username, profilePicture },
-            });
-          }
-        })
-        .catch((e) => {
-          alert("wrong details");
-          console.log(e);
-        });
-    } catch (e) {
-      console.log(e);
+      const userData = {
+        email,
+        password,
+        role,
+        username,
+      };
+
+      userData.email = userData.email.toLowerCase(); //convert email to lower case
+      await Register(userData);
+      setLoading(false);
+      navigate("/board");
+      location.reload();
+      toast.success("Registered Successfully");
+    } catch (error) {
+      setLoading(false);
+      setErrorMsg(error.response.data.message);
+      toast.error(error.response.data.message);
     }
-  }
+  };
+
   return (
     <div>
       <HeadOption />
@@ -58,14 +67,14 @@ const SignUp = () => {
               If you are already a member, easily log in
             </p>
 
-            <form action="POST" class="flex flex-col gap-4">
+            <form onSubmit={handleRegister} class="flex flex-col gap-4">
               <div class="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
                 <input
                   type="text"
                   name="username"
-                  onChange={(e) => {
-                    setUsername(e.target.value);
-                  }}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  value={username || ""}
                   autoComplete="on"
                   autoSave="on"
                   placeholder="Name"
@@ -76,9 +85,9 @@ const SignUp = () => {
                 <input
                   type="email"
                   name="email"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
+                  value={email || ""}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   autoComplete="on"
                   autoSave="on"
                   placeholder="Email"
@@ -90,20 +99,62 @@ const SignUp = () => {
                 <input
                   type="password"
                   name="password"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
+                  id="Viewpwd"
+                  value={password || ""}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                   autoComplete="on"
                   autoSave="on"
                   placeholder="Password"
                   className="outline-none bg-transparent"
                 />
+                <span
+                  onClick={togglePwd}
+                  className=" text-brown transition-transform  duration-300"
+                >
+                  {viewPwd ? <LuEye /> : <LuEyeOff />}
+                </span>
               </div>
-              <input
+              {/* role */}
+
+              <div className="">
+                <label htmlFor="Role" className="block">
+                  Select Role:
+                </label>
+                <span className="">
+                  <input
+                    type="radio"
+                    name="role"
+                    value={`customer` || ""}
+                    onChange={handleRole}
+                    checked={role === "customer"}
+                  />
+                  <label htmlFor="" className="px-1 font-bold">
+                    {" "}
+                    Customer{" "}
+                  </label>
+                </span>
+                <span className="pl-2">
+                  <input
+                    type="radio"
+                    name="role"
+                    value={`admin` || ""}
+                    onChange={handleRole}
+                    checked={role === "admin"}
+                  />
+                  <label htmlFor="" className="px-1 font-bold">
+                    Admin
+                  </label>
+                </span>
+              </div>
+
+              <button
                 type="submit"
-                onClick={submit}
                 class="bg-[#6b4343] hover:bg-transparent hover:text-[#6b4343] hover:border-[#6b4343] hover:border-[1px] transition-all ease-out rounded-xl text-white py-2 hover:scale-100 duration-300"
-              />
+              >
+                {" "}
+                {loading ? "Loading...please wait..." : "CREATE ACCOUNT"}
+              </button>
             </form>
 
             <div class="mt-6 grid grid-cols-3 items-center text-gray-400">
