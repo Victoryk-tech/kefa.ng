@@ -16,7 +16,7 @@ const LayoutHead = () => {
       </Link>
 
       <div className="flex items-center justify-center space-x-3">
-        <Link to="cart" className="relative">
+        <Link to="/cart" className="relative">
           <IoCartOutline size={30} className=" text-amber-950" />
           <h1 className="absolute top-0 right-0 -mt-2 -mr-1 flex justify-center items-center bg-[#492C02] text-white font-semibold text-[14px] w-6 h-5 rounded-full border-2 border-white">
             {cartState.totalQuantity}
