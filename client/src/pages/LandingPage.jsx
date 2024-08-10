@@ -6,7 +6,7 @@ import { Outlet } from "react-router-dom";
 import TopbarProducts from "../components/landingpage/TopbarProducts";
 import Service from "../components/landingpage/Service";
 import FlashSales from "../components/landingpage/FlashSales";
-
+import Faq from "../components/landingpage/Faq";
 const LandingPage = () => {
   return (
     <div>
@@ -27,7 +27,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
+      <Faq />
       <Reviews />
       <Service />
     </div>

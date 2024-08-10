@@ -1,15 +1,8 @@
-// import React, { useState } from "react";
-// import backgrd from "../assets/login.jpg";
-// import { Link, useNavigate } from "react-router-dom";
-// import axios from "axios";
-// import { TbMailFilled } from "react-icons/tb";
-// import { MdOutlineRemoveRedEye } from "react-icons/md";
-// import { FaRegEyeSlash } from "react-icons/fa6";
 import HeadOption from "../components/HeadOption";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-//import { Logo } from "../component/Logo";
+
 import { CiDark, CiLight } from "react-icons/ci";
 import { LuEye, LuEyeOff } from "react-icons/lu";
 import { UserAuth } from "../components/context/AuthContext";
@@ -19,42 +12,8 @@ const initialState = {
   password: "",
 };
 const Login = () => {
-  // const history = useNavigate();
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // let backendURL;
-  // if (process.env.NODE_ENV === "production") {
-  //   backendURL = "https://kefa-ng.onrender.com/api/user";
-  // } else {
-  //   backendURL = "http://localhost:8000/api/user";
-  // }
-
-  // const submit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axios
-  //       .post(`${backendURL}`, {
-  //         email,
-  //         password,
-  //       })
-  //       .then((res) => {
-  //         if (res.data == "exist") {
-  //           history("/board/home", { state: { password, email } });
-  //         } else if (res.data == "notexist") {
-  //           alert("User have not sign up");
-  //         }
-  //       })
-  //       .catch((e) => {
-  //         alert("wrong details");
-  //         console.log(e);
-  //       });
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-
   const [formData, setFormData] = useState(initialState);
-  const [darkMode, setDarkMode] = useState(false);
+
   const { email, password } = formData;
   const { Login } = UserAuth();
   const navigate = useNavigate();
@@ -107,16 +66,16 @@ const Login = () => {
   return (
     <div>
       <HeadOption />
-      <section class="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
-        <div class="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
-          <div class="md:w-1/2 px-8 md:px-16">
-            <h2 class="font-bold text-2xl text-[#6b4343]">Welcome Back</h2>
-            <p class="text-xs mt-4 text-[#6b4343]">
+      <section className="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
+        <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
+          <div className="md:w-1/2 px-8 md:px-16">
+            <h2 className="font-bold text-2xl text-[#6b4343]">Welcome Back</h2>
+            <p className="text-xs mt-4 text-[#6b4343]">
               If you are already a member, easily log in
             </p>
 
             <form onSubmit={handleLogin} class="flex flex-col gap-4">
-              <div class="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
+              <div className="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
                 <input
                   type="email"
                   name="email"
@@ -128,7 +87,7 @@ const Login = () => {
                 />
               </div>
 
-              <div class="flex items-center justify-between p-2 rounded-xl border w-full bg-white">
+              <div className="flex items-center justify-between p-2 rounded-xl border w-full bg-white">
                 <input
                   type={viewPwd ? "password" : "text"}
                   id="changePwd"
@@ -149,39 +108,39 @@ const Login = () => {
               <button
                 disabled={loading}
                 type="submit"
-                class="bg-[#6b4343] hover:bg-transparent hover:text-[#6b4343] hover:border-[#6b4343] hover:border-[1px] transition-all ease-out rounded-xl text-white py-2 hover:scale-100 duration-300"
+                className="bg-[#6b4343] hover:bg-transparent hover:text-[#6b4343] hover:border-[#6b4343] hover:border-[1px] transition-all ease-out rounded-xl text-white py-2 hover:scale-100 duration-300"
               >
                 {" "}
                 {loading ? "Loading...Please wait!" : "LOGIN"}
               </button>
             </form>
 
-            <div class="mt-6 grid grid-cols-3 items-center text-gray-400">
-              <hr class="border-gray-400"></hr>
-              <p class="text-center text-sm">OR</p>
-              <hr class="border-gray-400"></hr>
+            <div className="mt-6 grid grid-cols-3 items-center text-gray-400">
+              <hr className="border-gray-400"></hr>
+              <p className="text-center text-sm">OR</p>
+              <hr className="border-gray-400"></hr>
             </div>
 
-            <button class="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#6b4343]">
+            <button className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#6b4343]">
               Login with Google
             </button>
 
-            <div class="mt-5 text-xs border-b border-[#6b4343] py-4 text-[#6b4343]">
+            <div className="mt-5 text-xs border-b border-[#6b4343] py-4 text-[#6b4343]">
               <a href="#">Forgot your password?</a>
             </div>
 
-            <div class="mt-3 text-xs flex justify-between items-center text-[#6b4343]">
+            <div className="mt-3 text-xs flex justify-between items-center text-[#6b4343]">
               <p>Don't have an account?</p>
               <Link
                 to="signup"
-                class="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-[#6b4343] hover:border-[#6b4343] hover:bg-transparent hover:border-[1px]"
+                className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-[#6b4343] hover:border-[#6b4343] hover:bg-transparent hover:border-[1px]"
               >
                 Register
               </Link>
             </div>
           </div>
 
-          <div class="md:block hidden w-1/2">
+          <div className="md:block hidden w-1/2">
             <img
               src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt=""

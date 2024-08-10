@@ -30,17 +30,17 @@ const CountDown = () => {
           return (
             <div className="flex items-center justify-center">
               <div className="" key={label}>
-                <span className="font-medium text-[12px] text-[#492C02]">
+                <span className="font-medium text-[12px] text-[#3f3e3d]">
                   <small>{label}</small>{" "}
                 </span>
 
                 <div className="value">
-                  <span className="font-bold text-[24px] lg:text-[32px] text-[#492C02]">
+                  <span className="font-bold text-[18px] md:text-[24px] lg:text-[32px] text-[#492C02]">
                     {value}
                   </span>
                 </div>
               </div>
-              <span className="text-[#492C02] text-3xl flex justify-center items-center pt-3 lg:pt-5 px-3">
+              <span className="text-[#492C02] text-3xl flex justify-center items-center pt-3 lg:pt-5 px-2">
                 :
               </span>
             </div>

@@ -6,6 +6,7 @@ import ContextProvider from "./components/context/ContextProvider.jsx";
 import AuthContextProvider from "./components/context/AuthContext.jsx";
 import { UserProvider } from "./components/context/UserContext.jsx";
 import { disableReactDevTools } from "@fvilers/disable-react-devtools";
+import { SidebarProvider } from "./components/context/SidebarContext.jsx";
 
 if (process.env.NODE_ENV === "production") {
   disableReactDevTools();
@@ -14,9 +15,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <ContextProvider>
     <AuthContextProvider>
       <UserProvider>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
+        <SidebarProvider>
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </SidebarProvider>
       </UserProvider>
     </AuthContextProvider>
   </ContextProvider>

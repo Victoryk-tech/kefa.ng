@@ -24,6 +24,8 @@ import Messages from "./pages/DashboardPages/Messages";
 import ProductDetails from "./components/landingpage/ProductDetails";
 import { ToastContainer, toast } from "react-toastify";
 import { RequireAuth } from "./components/RequireAuth";
+import BottomNavBar from "./components/BottomNavBar";
+import { UserProfile } from "./pages/UserProfile";
 
 const App = () => {
   return (
@@ -43,6 +45,9 @@ const App = () => {
         />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
+        <Route element={<RequireAuth />}>
+          <Route path="profile" element={<UserProfile />} />
+        </Route>
 
         <Route element={<RequireAuth />}>
           <Route path="board" element={<Layout />}>
@@ -55,9 +60,11 @@ const App = () => {
             <Route path="plans" element={<WorkPlan />} />
           </Route>
         </Route>
+
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Conditional>
+        <BottomNavBar />
         <Footer />
       </Conditional>
       <ToastContainer autoClose={1000} />
