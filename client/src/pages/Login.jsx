@@ -50,7 +50,7 @@ const Login = () => {
       await Login(userData);
       setLoading(false);
       if (role === "customer") {
-        navigate("/");
+        navigate("/layout");
       } else {
         navigate("/board");
       }

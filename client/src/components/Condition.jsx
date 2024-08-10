@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-const ConditionRoute = ({ children }) => {
+const Condition = ({ children }) => {
   const location = useLocation(false);
   const [display, setDisplay] = useState();
 
@@ -20,7 +20,7 @@ const ConditionRoute = ({ children }) => {
       location.pathname === "/board/plans" ||
       location.pathname === "/board/create" ||
       location.pathname === "/board/messages" ||
-      location.pathname === "/layout"
+      location.pathname === "/"
     ) {
       setDisplay(false);
     } else {
@@ -31,4 +31,4 @@ const ConditionRoute = ({ children }) => {
   return <div>{display && children}</div>;
 };
 
-export default ConditionRoute;
+export default Condition;

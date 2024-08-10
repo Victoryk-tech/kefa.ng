@@ -47,7 +47,7 @@ const SignUp = () => {
       await Register(userData);
       setLoading(false);
       if (role === "customer") {
-        navigate("/");
+        navigate("/layout");
       } else {
         navigate("/board");
       }

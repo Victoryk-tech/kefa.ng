@@ -26,6 +26,9 @@ import { ToastContainer, toast } from "react-toastify";
 import { RequireAuth } from "./components/RequireAuth";
 import BottomNavBar from "./components/BottomNavBar";
 import { UserProfile } from "./pages/UserProfile";
+import Shop from "./pages/Shop";
+import Condition from "./components/Condition";
+import LayoutHead from "./components/landingpage/LayoutHead";
 
 const App = () => {
   return (
@@ -33,10 +36,11 @@ const App = () => {
       <ConditionRoute>
         <Header />
       </ConditionRoute>
+      <Condition>
+        <LayoutHead />
+      </Condition>
       <Routes>
-        <Route path="/" element={<LandingPage />}>
-          <Route path="/products" element={<Products />} />
-        </Route>
+        <Route path="/" element={<LandingPage />}></Route>
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route
@@ -45,8 +49,12 @@ const App = () => {
         />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
-        <Route element={<RequireAuth />}>
-          <Route path="profile" element={<UserProfile />} />
+
+        <Route path="layout" element={<Shop />}>
+          <Route path="layout/products" element={<Products />} />
+          <Route element={<RequireAuth />}>
+            <Route path="profile" element={<UserProfile />} />
+          </Route>
         </Route>
 
         <Route element={<RequireAuth />}>
@@ -63,8 +71,10 @@ const App = () => {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Conditional>
+      <Condition>
         <BottomNavBar />
+      </Condition>
+      <Conditional>
         <Footer />
       </Conditional>
       <ToastContainer autoClose={1000} />
