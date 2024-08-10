@@ -47,7 +47,7 @@ const SignUp = () => {
       await Register(userData);
       setLoading(false);
       if (role === "customer") {
-        navigate("/layout");
+        navigate("/shop");
       } else {
         navigate("/board");
       }
@@ -56,8 +56,8 @@ const SignUp = () => {
       toast.success("Registered Successfully");
     } catch (error) {
       setLoading(false);
-      setErrorMsg(error.response.data.message);
-      toast.error(error.response.data.message);
+      setErrorMsg(error.message);
+      toast.error(error.message);
     }
   };
 

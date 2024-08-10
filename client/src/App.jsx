@@ -44,15 +44,15 @@ const App = () => {
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
         <Route
-          path="/products/productDetails/:id"
+          path="layout/products/productDetails/:id"
           element={<ProductDetails />}
         />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
         <Route element={<RequireAuth />}>
-          <Route path="layout" element={<Shop />}>
-            <Route path="layout/products" element={<Products />} />
+          <Route path="shop" element={<Shop />}>
+            <Route path="products" element={<Products />} />
           </Route>
           <Route path="profile" element={<UserProfile />} />
         </Route>

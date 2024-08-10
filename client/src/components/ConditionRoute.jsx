@@ -20,7 +20,7 @@ const ConditionRoute = ({ children }) => {
       location.pathname === "/board/plans" ||
       location.pathname === "/board/create" ||
       location.pathname === "/board/messages" ||
-      location.pathname === "/layout" ||
+      location.pathname === "/shop" ||
       location.pathname === "/cart" ||
       location.pathname === "/checkout"
     ) {

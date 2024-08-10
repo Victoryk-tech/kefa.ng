@@ -15,12 +15,12 @@ const Shop = () => {
 
         <div className="w-full">
           <TopbarProducts />
-          <div className="w-full py-8 sm:py-16">
+          <div className="w-full py-8">
             <Outlet />
           </div>
         </div>
+        <Products />
       </div>
-      <Products />
     </div>
   );
 };

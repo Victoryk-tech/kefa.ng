@@ -26,7 +26,14 @@ const AuthContextProvider = ({ children }) => {
 
     const token = JSON.stringify(response.data.token);
     const userId = JSON.stringify(response.data.user._id);
-
+    const userRole = response.data.user.role;
+    console.log(response.data.user.role);
+    console.log(userRole);
+    if (userRole === "customer") {
+      window.location.href = "/shop";
+    } else {
+      window.location.href = "/board";
+    }
     if (token && userId) {
       sessionStorage.setItem("userId", userId);
       sessionStorage.setItem("token", token);

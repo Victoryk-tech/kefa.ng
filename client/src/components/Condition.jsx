@@ -20,7 +20,8 @@ const Condition = ({ children }) => {
       location.pathname === "/board/plans" ||
       location.pathname === "/board/create" ||
       location.pathname === "/board/messages" ||
-      location.pathname === "/"
+      location.pathname === "/" ||
+      location.pathname === "*"
     ) {
       setDisplay(false);
     } else {

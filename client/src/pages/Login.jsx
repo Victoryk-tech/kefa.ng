@@ -48,18 +48,15 @@ const Login = () => {
 
       userData.email = userData.email.toLowerCase();
       await Login(userData);
-      setLoading(false);
-      if (role === "customer") {
-        navigate("/layout");
-      } else {
-        navigate("/board");
-      }
-      location.reload();
+      console.log(userData);
+
+      // location.reload();
+
       toast.success("Logged in Successfully");
     } catch (error) {
       setLoading(false);
-      setErrorMsg(error.response.data.message);
-      toast.error(error.response.data.message);
+      setErrorMsg(error.message);
+      toast.error(error.message);
     }
   };
 
@@ -74,7 +71,11 @@ const Login = () => {
               If you are already a member, easily log in
             </p>
 
-            <form onSubmit={handleLogin} class="flex flex-col gap-4">
+            <form
+              onSubmit={handleLogin}
+              action="POST"
+              class="flex flex-col gap-4"
+            >
               <div className="bg-white flex items-center justify-between mt-8 p-2 rounded-xl border w-full">
                 <input
                   type="email"
@@ -138,6 +139,9 @@ const Login = () => {
                 Register
               </Link>
             </div>
+            <Link to={"/"} className="text-sm underline" onClick={scrollToTop}>
+              go back?
+            </Link>
           </div>
 
           <div className="md:block hidden w-1/2">
