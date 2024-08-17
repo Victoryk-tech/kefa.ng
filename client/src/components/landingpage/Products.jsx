@@ -9,9 +9,9 @@ const Products = () => {
   console.log(process.env.NODE_ENV);
   let backendURL;
   if (process.env.NODE_ENV === "production") {
-    backendURL = "https://kefa-ng.onrender.com/api/product";
+    backendURL = "https://kefa-ng.onrender.com/api/product/getproducts";
   } else {
-    backendURL = "http://localhost:8000/api/product";
+    backendURL = "http://localhost:8000/api/product/getproducts";
   }
   const getProducts = async () => {
     try {
