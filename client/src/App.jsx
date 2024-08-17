@@ -33,9 +33,6 @@ import LayoutHead from "./components/landingpage/LayoutHead";
 const App = () => {
   return (
     <BrowserRouter>
-      <ConditionRoute>
-        <Header />
-      </ConditionRoute>
       <Condition>
         <LayoutHead />
       </Condition>
@@ -43,10 +40,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="cart" element={<CartPage />} />
         <Route path="checkout" element={<CheckoutPage />} />
-        <Route
-          path="layout/products/productDetails/:id"
-          element={<ProductDetails />}
-        />
+        <Route path="/productDetails/:id" element={<ProductDetails />} />
         <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 

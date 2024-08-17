@@ -16,7 +16,7 @@ const AllProducts = ({ Product, getProducts }) => {
   return (
     <div className="flex flex-col justify-start items-start bg-white rounded-sm shadow-sm hover:shadow-lg w-[160px] sm:w-[230px] lg:w-[190px] lg:h-[193px] h-[240px] hover:scale-95 ease-in-out transition-all">
       <div className="flex items-center justify-center w-full h-1/2">
-        <Link to={`layout/products/productDetails/${Product._id}`}>
+        <Link to={`/productDetails/${Product._id}`}>
           <img src={image} alt="" className="w-full h-full object-contain" />
         </Link>
       </div>

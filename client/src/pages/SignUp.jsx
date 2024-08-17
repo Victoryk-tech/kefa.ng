@@ -122,32 +122,34 @@ const SignUp = () => {
               </div>
               {/* role */}
 
-              <div className="">
-                <label htmlFor="Role" className="block">
+              <div className="space-2">
+                <label htmlFor="Role" className="block text-sm">
                   Select Role:
                 </label>
-                <span className="">
+                <span className="text-sm text-center">
                   <input
+                    className="h-3"
                     type="radio"
                     name="role"
                     value={`customer` || ""}
                     onChange={handleRole}
                     checked={role === "customer"}
                   />
-                  <label htmlFor="" className="px-1 font-bold">
+                  <label htmlFor="" className="px-1 font-bold text-sm">
                     {" "}
                     Customer{" "}
                   </label>
                 </span>
-                <span className="pl-2">
+                <span className="pl-2 text-center">
                   <input
                     type="radio"
                     name="role"
+                    className="h-3"
                     value={`admin` || ""}
                     onChange={handleRole}
                     checked={role === "admin"}
                   />
-                  <label htmlFor="" className="px-1 font-bold">
+                  <label htmlFor="" className="px-1 font-bold text-sm">
                     Admin
                   </label>
                 </span>

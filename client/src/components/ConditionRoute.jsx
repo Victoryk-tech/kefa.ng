@@ -22,6 +22,7 @@ const ConditionRoute = ({ children }) => {
       location.pathname === "/board/messages" ||
       location.pathname === "/shop" ||
       location.pathname === "/cart" ||
+      location.pathname === "/productDetails/:id" ||
       location.pathname === "/checkout"
     ) {
       setDisplay(false);

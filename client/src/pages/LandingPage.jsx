@@ -10,6 +10,7 @@ import Faq from "../components/landingpage/Faq";
 const LandingPage = () => {
   return (
     <div>
+      <Header />
       <Hero />
       <FlashSales />
 
