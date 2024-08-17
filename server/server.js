@@ -14,7 +14,7 @@ const { protect } = require("./middleware/authMiddleware");
 
 //refactor .env
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 3000;
 const FRONTEND = process.env.FRONTEND;
 const MONGO_URL = process.env.MONGO_URL;
 

@@ -9,19 +9,19 @@ const {
   deleteProduct,
 } = require("../controller/productController");
 
-router.get("/", getProducts);
+router.get("/getproducts", getProducts);
 
 //get single product
-router.get("/:id", getProduct);
+router.get("/getproduct/:id", getProduct);
 
 //put
-router.post("/", createProducts);
+router.post("/createproducts", createProducts);
 
 // update a product
-router.put("/:id", updateProducts);
+router.put("/update/:id", updateProducts);
 
 // delete a product
 
-router.delete("/:id", deleteProduct);
+router.delete("/delete/:id", deleteProduct);
 
 module.exports = router;
