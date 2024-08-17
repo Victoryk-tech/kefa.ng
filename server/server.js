@@ -9,6 +9,8 @@ const authRoute = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const usersRoute = require("./routes/usersRoute");
 const app = express();
+const cookieParser = require("cookie-parser");
+const { protect } = require("./middleware/authMiddleware");
 
 //refactor .env
 
@@ -45,6 +47,7 @@ app.use(cors(grantAccess));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(rateLimit);
+app.use(cookieParser());
 
 //routes
 app.use("/api/product", productRoutes);
@@ -66,6 +69,9 @@ mongoose
 // routes
 app.get("/", (req, res) => {
   res.send("hello world");
+});
+app.use("/protected-route", protect, (req, res) => {
+  res.send("You have accessed a protected route!");
 });
 
 // registration

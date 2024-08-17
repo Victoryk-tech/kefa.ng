@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/regModal");
+const asyncHandler = require("express-async-handler");
 
 const protect = async (req, res, next) => {
   try {
