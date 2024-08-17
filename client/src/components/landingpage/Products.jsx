@@ -13,6 +13,7 @@ const Products = () => {
   } else {
     backendURL = "http://localhost:8000/api/product/getproducts";
   }
+  console.log(backendURL);
   const getProducts = async () => {
     try {
       setIsLoading(true);

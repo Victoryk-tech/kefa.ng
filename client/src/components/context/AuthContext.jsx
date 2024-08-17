@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
 } else {
   backendURL = "http://localhost:8000/api/auth";
 }
-// console.log(backendURL)
+console.log(backendURL);
 
 const AuthContextProvider = ({ children }) => {
   const [token, setToken] = useState();
