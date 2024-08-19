@@ -5,9 +5,9 @@ dotenv.config();
 
 const errorHandler = (err, req, res, next) => {
   const statusCode = err.statusCode || 500;
-  const env = process.env.NODE_ENV || "development";
+  const env = process.env.NODE_ENV || "production";
 
-  if (env === "development") {
+  if (env === "production") {
     res.status(statusCode).json({
       message: err.message,
       stack: err.stack,
