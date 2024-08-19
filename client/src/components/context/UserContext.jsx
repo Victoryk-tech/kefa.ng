@@ -28,7 +28,7 @@ export const UserProvider = ({ children }) => {
           "Content-Type": "application/json",
         },
       };
-      const response = await axios.get(`${backendURL}getUsersCount`, config);
+      const response = await axios.get(`${backendURL}/getUsersCount`, config);
       setLoading(false);
       setUserTotal(response.data);
       return response.data;
