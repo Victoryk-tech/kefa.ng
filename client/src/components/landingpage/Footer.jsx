@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="py-2 flex items-center justify-center text-[16px] font-poppin font-normal border-t-[0.5px] border-white">
-        <p className="leading-6">&copy; Duexe 2024. All right reserved</p>
+        <p className="leading-6">&copy; Kefa 2024. All right reserved</p>
       </div>
     </div>
   );

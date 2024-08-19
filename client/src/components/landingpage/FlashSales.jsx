@@ -12,21 +12,21 @@ const FlashSales = () => {
         <CountDown />
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 items-center justify-center py-10 lg:px-8 gap-y-3">
+      <div className="grid md:grid-cols-3 lg:grid-cols-4 items-center justify-center py-10 lg:px-8 gap-y-6 md:gap-2 lg-gap-4">
         {flash.map((data, index) => {
           return (
             <div
               key={index}
-              className="rounded-md w-[150px]  md:w-44 h-52 bg-stone-100"
+              className="bg-white p-3 shadow rounded-xl w-full sm:w-60  lg:w-64 h-80  text-sm md:text-normal"
             >
-              <div className="rounded-md h-[60%] w-full">
+              <div className="h-52 w-full bg-stone-200 rounded-2xl">
                 <img
                   src={data.image}
                   alt=""
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain rounded-3xl"
                 />
               </div>
-              <div className="h-[40%] px-2 py-4">
+              <div className="h-[40%] space-y-2 py-4">
                 <h3 className="font-poppin text-sm font-semibold">
                   Brand:
                   <span className="text-amber-900 font-normal">
@@ -42,7 +42,7 @@ const FlashSales = () => {
                 <h3 className="font-poppin text-sm font-semibold">
                   Price:
                   <span className="text-amber-900 font-normal">
-                    {data.amount}
+                    N{data.amount}
                   </span>
                 </h3>
               </div>
