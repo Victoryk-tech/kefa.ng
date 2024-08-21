@@ -45,7 +45,7 @@ const App = () => {
         <Route path="/" element={<Landing />}></Route>
         {/* <Route path="/" element={<LandingPage />}></Route> */}
 
-        <Route path="login/signup" element={<SignUp />} />
+        <Route path="/login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
         <Route element={<RequireAuth />}>

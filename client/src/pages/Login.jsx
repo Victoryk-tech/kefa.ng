@@ -131,7 +131,7 @@ const Login = () => {
             <div className="mt-3 text-xs flex justify-between items-center text-[#6b4343]">
               <p>Don't have an account?</p>
               <Link
-                to="login/signup"
+                to="/login/signup"
                 className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-[#6b4343] hover:border-[#6b4343] hover:bg-transparent hover:border-[1px]"
               >
                 Register
