@@ -29,13 +29,14 @@ export const UserProvider = ({ children }) => {
         },
       };
       const response = await axios.get(`${backendURL}/getUsersCount`, config);
-      setLoading(false);
       setUserTotal(response.data);
       return response.data;
     } catch (error) {
+      const errorMsg = error.response?.data?.message || "An error occurred";
+      setErrorMsg(errorMsg);
+      console.log(errorMsg);
+    } finally {
       setLoading(false);
-      setErrorMsg(error.response.data.message);
-      console.log(error.response.data.message);
     }
   };
 

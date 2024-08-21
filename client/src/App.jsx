@@ -31,6 +31,7 @@ import Header from "./components/Landing/Header";
 import Footer from "./components/Landing/Footer";
 import ConditionH from "./components/ConditionH";
 import HeadOption from "./components/Shop/HeadOption";
+import Users from "./components/dashboard/Users";
 
 const App = () => {
   return (
@@ -62,7 +63,8 @@ const App = () => {
         <Route element={<RequireAuth />}>
           <Route path="board" element={<Layout />}>
             <Route path="home" element={<Home />} />
-            <Route path="clients" element={<Clients />} />
+            <Route path="clients" element={<Users />} />
+            {/* <Route path="clients" element={<Clients />} /> */}
             <Route path="orders" element={<Orders />} />
             <Route path="products" element={<MyProducts />} />
             <Route path="create" element={<Create />} />
