@@ -60,8 +60,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <section className="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
+    <div className=" bg-gray-50">
+      <section className=" min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div className="md:w-1/2 px-8 md:px-16">
             <h2 className="font-bold text-2xl text-[#6b4343]">Welcome Back</h2>
@@ -131,7 +131,7 @@ const Login = () => {
             <div className="mt-3 text-xs flex justify-between items-center text-[#6b4343]">
               <p>Don't have an account?</p>
               <Link
-                to="signup"
+                to="login/signup"
                 className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300 hover:text-[#6b4343] hover:border-[#6b4343] hover:bg-transparent hover:border-[1px]"
               >
                 Register

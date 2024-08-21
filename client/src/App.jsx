@@ -45,7 +45,7 @@ const App = () => {
         <Route path="/" element={<Landing />}></Route>
         {/* <Route path="/" element={<LandingPage />}></Route> */}
 
-        <Route path="signup" element={<SignUp />} />
+        <Route path="login/signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
         <Route element={<RequireAuth />}>
@@ -57,7 +57,7 @@ const App = () => {
 
         <Route path="shop/cart" element={<CartPage />} />
         <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="shop/productDetails/:id" element={<ProductDetails />} />
+        <Route path="/productDetails/:id" element={<ProductDetails />} />
 
         <Route element={<RequireAuth />}>
           <Route path="board" element={<Layout />}>

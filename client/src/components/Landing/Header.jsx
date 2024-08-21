@@ -39,7 +39,7 @@ const Header = () => {
   return (
     <div
       className={`${
-        isActive && "inset-0 fixed transition-all duration-500 "
+        isActive && "inset-0 fixed transition-all duration-500 scroll-smooth "
       }  w-full z-[999] text-[#6b4343]`}
     >
       <TopHeader />
@@ -147,14 +147,14 @@ const Header = () => {
 
           {/* login/signup */}
           <div className="hidden md:flex items-center justify-center ">
-            <NavLink
+            {/* <NavLink
               to="signup"
               onClick={scrollToTop}
               className={({ isActive }) => (isActive ? actLink : norLink)}
             >
               <p>Sign Up</p>
             </NavLink>
-            <p>/</p>
+            <p>/</p> */}
             <NavLink
               to="login"
               onClick={scrollToTop}
