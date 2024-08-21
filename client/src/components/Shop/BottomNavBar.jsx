@@ -21,16 +21,16 @@ import {
   ShowOnLogin,
   ShowOnLogout,
   ShowAdmin,
-} from "./HiddenLinks";
+} from "../HiddenLinks";
 import { TbChecklist } from "react-icons/tb";
 import { RxDashboard, RxUpdate } from "react-icons/rx";
 import { AiFillDashboard } from "react-icons/ai";
 import MobileSideMenu from "./MobileSideMenu";
 import { FaShopify } from "react-icons/fa6";
-import { UserAuth } from "../components/context/AuthContext";
+import { UserAuth } from "../context/AuthContext";
 //import { CartContext } from "../contexts/CartContext";
-import { UserContext } from "../components/context/UserContext";
-import { SidebarContext } from "../components/context/SidebarContext";
+import { UserContext } from "../context/UserContext";
+import { SidebarContext } from "../context/SidebarContext";
 import { FaUserCheck } from "react-icons/fa";
 import { GoHome } from "react-icons/go";
 import { IoStorefrontOutline } from "react-icons/io5";

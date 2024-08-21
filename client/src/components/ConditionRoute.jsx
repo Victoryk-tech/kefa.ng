@@ -7,14 +7,12 @@ const ConditionRoute = ({ children }) => {
 
   useEffect(() => {
     if (
-      location.pathname === "/login" ||
       location.pathname === "/board" ||
       location.pathname === "/board/home" ||
       location.pathname === "/board/products" ||
       location.pathname === "/board/createProduct" ||
       location.pathname === "/board/customers" ||
       location.pathname === "/board/clients" ||
-      location.pathname === "/login/signup" ||
       location.pathname === "/work" ||
       location.pathname === "/board/orders" ||
       location.pathname === "/board/plans" ||

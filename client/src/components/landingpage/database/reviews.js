@@ -4,7 +4,8 @@ export const unleash = [
     name: "Lydia .A. Chinyere",
     title: "entreprenur",
     description:
-      "Yes! No doubt, Kefa is Simply the best... good experience,just explore!",
+      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+
     image: `https://randomuser.me/api/portraits/men/23.jpg`,
   },
   {
@@ -12,7 +13,8 @@ export const unleash = [
     name: "Khloe",
     title: "Developer",
     description:
-      "A good brand for shopping, fast delivery and quality products.",
+      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+
     image: `https://randomuser.me/api/portraits/women/40.jpg`,
   },
   {
@@ -20,7 +22,8 @@ export const unleash = [
     name: "Godstime Mathe",
     title: "Engineer @Florida",
     description:
-      "I love Kefa and will choose and recommend it anytime any day!, best experience ever!",
+      "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
+
     image: `https://images.unsplash.com/photo-1545184180-25d471fe75eb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE4fHx8ZW58MHx8fHx8`,
   },
 ];

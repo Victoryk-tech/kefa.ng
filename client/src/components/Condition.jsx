@@ -7,7 +7,7 @@ const Condition = ({ children }) => {
 
   useEffect(() => {
     if (
-      location.pathname === "/login" ||
+      location.pathname === "/" ||
       location.pathname === "/board" ||
       location.pathname === "/board/home" ||
       location.pathname === "/board/products" ||
@@ -20,7 +20,6 @@ const Condition = ({ children }) => {
       location.pathname === "/board/plans" ||
       location.pathname === "/board/create" ||
       location.pathname === "/board/messages" ||
-      location.pathname === "/" ||
       location.pathname === "*"
     ) {
       setDisplay(false);

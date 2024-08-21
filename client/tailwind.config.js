@@ -5,6 +5,9 @@ export default {
     fontFamily: {
       poppin: ["Poppins", "san-serif"],
       inter: ["Inter", "sans-serif"],
+      oswald: ["Oswald", "sans-serif"],
+
+      rubik: ["Rubik Scribble", "system-ui"],
     },
     // backgroundImage: {
     //   login: "url('../../assets/login.png')",

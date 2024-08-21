@@ -4,7 +4,7 @@ import { IoArrowUndoOutline } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
 //import { HomeLogo } from "./Logo";
 import { BiPurchaseTag } from "react-icons/bi";
-import { ShowAdmin, ShowOnLogin, ShowOnLogout } from "./HiddenLinks";
+import { ShowAdmin, ShowOnLogin, ShowOnLogout } from "../HiddenLinks";
 import { MdOutlineConnectWithoutContact } from "react-icons/md";
 import { SocialMedia } from "./SocialMedia";
 import { AiFillHome } from "react-icons/ai";

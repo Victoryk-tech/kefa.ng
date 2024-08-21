@@ -11,7 +11,7 @@ const TopbarProducts = () => {
         </div>
 
         <Link
-          to="layout/products"
+          to="shop/products"
           className="border-[#492C02] border-[1px] rounded-2xl px-3 py-2 hover:outline-none hover:border-none hover:bg-[#492C02] hover:text-white transition-all ease-out scale-100 text-[14px]"
         >
           All

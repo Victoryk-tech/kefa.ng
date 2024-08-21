@@ -1,19 +1,17 @@
-import React, { useContext, useEffect } from "react";
-import { IoCartOutline } from "react-icons/io5";
-import { IoMdHeartEmpty } from "react-icons/io";
+import React, { useEffect } from "react";
+import { IoHomeOutline } from "react-icons/io5";
+import { FiShoppingCart } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
 import { CartContext } from "../context/ContextProvider";
 
 const Header = () => {
-  const { cartState } = useContext(CartContext);
-
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
   const activeLink =
-    "text-[#6b4343] font-bold text-[16px] relative after:content-[''] after:bg-[#6b4343] after:h-[4px] after:w-[100%] after:left-0 after:bottom-[-12px] after:rounded-xl after:absolute";
+    "text-[#6b4343] flex items-center justify-center space-x-1 font-bold text-[17px] relative after:content-[''] after:bg-[#6b4343] after:h-[4px] after:w-[100%] after:left-0 after:bottom-[-12px] after:rounded-xl after:absolute";
   const normalLink =
-    "relative tracking-[1px] text-[16px] leading-[20px] font-bold hover:text-[#6b4343] after:content-[''] after:bg-[#8A50F0] after:h-[4px] after:w-[0%] after:left-0 after:bottom-[-12px] after:rounded-xl after:absolute after:duration-300 hover:after:w-[100%]";
+    "relative flex items-center justify-center space-x-1 tracking-[1px] text-[16px] leading-[20px] font-bold hover:text-[#6b4343] after:content-[''] after:bg-[#6b4343] after:h-[4px] after:w-[0%] after:left-0 after:bottom-[-12px] after:rounded-xl after:absolute after:duration-300 hover:after:w-[100%]";
   useEffect(() => {
     window.addEventListener("scroll", () => {
       window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
@@ -26,15 +24,23 @@ const Header = () => {
           Kefa.ng
         </h1>
       </Link>
-      <nav className="hidden  md:flex items-center justify-center gap-x-6">
+      <nav className="hidden  md:flex items-center justify-center gap-x-6  font-oswald">
         <NavLink
           to="/"
           onClick={scrollToTop}
           className={({ isActive }) => (isActive ? activeLink : normalLink)}
         >
-          Home
+          <p>Home</p>
+          <IoHomeOutline />
         </NavLink>
-        <Link to="board">Shop</Link>
+        <NavLink
+          to="board"
+          onClick={scrollToTop}
+          className={({ isActive }) => (isActive ? activeLink : normalLink)}
+        >
+          <p> Shop</p>
+          <FiShoppingCart />
+        </NavLink>
         <p>Reviews</p>
         <p>Products</p>
         <NavLink

@@ -8,7 +8,7 @@ const CartItems = () => {
   return (
     <div className="w-full h-full px-2 md:px-4 lg:px-20 py-10">
       <div className="text-[11px] flex items-start justify-start font-poppin font-normal md:text-[16px] gap-1 lg:space-x-3 pb-10">
-        <Link to="/">
+        <Link to="shop">
           <p>Home</p>
         </Link>
         <p>/</p>
@@ -84,8 +84,8 @@ const CartItems = () => {
                     </p>
                   </div>
 
-                  <button className="bg-[#492C02] rounded-[4px]  text-center ml-20 md:ml-8  text-white hover:text-[#492C02] hover:bg-white hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]">
-                    <Link to="/checkout">Procced to checkout</Link>
+                  <button className="bg-[#492C02] rounded-[4px] cursor-pointer text-center ml-20 md:ml-8  text-white hover:text-[#492C02] hover:bg-white hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]">
+                    <Link to="shop/cart/checkout">Procced to checkout</Link>
                   </button>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import FlashSales from "../components/landingpage/FlashSales";
 import Faq from "../components/landingpage/Faq";
 const LandingPage = () => {
   return (
-    <div>
+    <div className="scroll-smooth">
       <Header />
       <Hero />
       <FlashSales />

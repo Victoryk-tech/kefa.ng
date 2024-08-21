@@ -19,7 +19,7 @@ const Faq = () => {
   }, []);
 
   return (
-    <section data-aos="fade-up" className="my-10 md:my-20">
+    <section data-aos="fade-up" className="px-2 md:px-14 lg:px-16 py-8">
       <div className="flex flex-col items-center justify-center">
         <div className="p-5">
           <p className="text-xl sm:text-3xl text-center font-semibold pb-3 font-poppins">
@@ -29,7 +29,7 @@ const Faq = () => {
         <div data-aos="flip-up" className="w-[90%] md:[80%]">
           {FaqData.map((data, index) => {
             return (
-              <div key={index} className="p-2 md:p-4 space-y-4 md:space-y-6">
+              <div key={index} className="p-2 md:p-4 space-y-4 md:space-y-3">
                 <div
                   className="flex justify-between items-center cursor-pointer"
                   onClick={() => handleToggle(index)}

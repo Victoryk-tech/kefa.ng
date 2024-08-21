@@ -16,7 +16,7 @@ const AllProducts = ({ Product, getProducts }) => {
   return (
     <div className="flex flex-col justify-start items-start bg-white rounded-sm shadow-sm hover:shadow-lg w-[160px] sm:w-[230px] lg:w-[190px] lg:h-[193px] h-[240px] hover:scale-95 ease-in-out transition-all">
       <div className="flex items-center justify-center w-full h-1/2">
-        <Link to={`/productDetails/${Product._id}`}>
+        <Link to={`shop/productDetails/${Product._id}`}>
           <img src={image} alt="" className="w-full h-full object-contain" />
         </Link>
       </div>
@@ -34,12 +34,12 @@ const AllProducts = ({ Product, getProducts }) => {
           ${oldprice}
         </p> */}
           </div>
-          <p
-            className="text-[20px] text-center font-[900] bg-[#492C02] p-[8px] rounded-3xl text-white hover:bg-[#492C02] hover:cursor-pointer transition-none ease-out"
+          <div
+            className="text-[20px] text-center cursor-pointer font-[900] bg-[#492C02] p-[8px] rounded-3xl text-white hover:bg-[#492C02] hover:cursor-pointer transition-none ease-out"
             onClick={() => addToCart(Product)}
           >
             <BsBag />
-          </p>
+          </div>
         </div>
         <div className="flex items-start justify-start py-1">
           <img src={fivestar} alt="" />

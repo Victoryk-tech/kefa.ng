@@ -2,8 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ConditionRoute from "./components/ConditionRoute";
-import Header from "./components/landingpage/Header";
-import Footer from "./components/landingpage/Footer";
+
 import LandingPage from "./pages/LandingPage";
 import Products from "./components/landingpage/Products";
 import CartPage from "./pages/CartPage";
@@ -24,32 +23,38 @@ import Messages from "./pages/DashboardPages/Messages";
 import ProductDetails from "./components/landingpage/ProductDetails";
 import { ToastContainer, toast } from "react-toastify";
 import { RequireAuth } from "./components/RequireAuth";
-import BottomNavBar from "./components/BottomNavBar";
+import BottomNavBar from "./components/Shop/BottomNavBar";
 import { UserProfile } from "./pages/UserProfile";
 import Shop from "./pages/Shop";
 import Condition from "./components/Condition";
 import LayoutHead from "./components/landingpage/LayoutHead";
+import Landing from "./pages/Landing";
+import Header from "./components/Landing/Header";
+import Footer from "./components/Landing/Footer";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Condition>
-        <LayoutHead />
-      </Condition>
+      <ConditionRoute>
+        <Header />
+      </ConditionRoute>
       <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="cart" element={<CartPage />} />
-        <Route path="checkout" element={<CheckoutPage />} />
-        <Route path="/productDetails/:id" element={<ProductDetails />} />
-        <Route path="/login/signup" element={<SignUp />} />
+        <Route path="/" element={<Landing />}></Route>
+        {/* <Route path="/" element={<LandingPage />}></Route> */}
+
+        <Route path="signup" element={<SignUp />} />
         <Route path="login" element={<Login />} />
 
         <Route element={<RequireAuth />}>
-          <Route path="shop" element={<Shop />}>
-            <Route path="products" element={<Products />} />
-          </Route>
+          <Route path="shop" element={<Shop />} />
+
+          {/* <Route path="products" element={<Products />} /> */}
           <Route path="profile" element={<UserProfile />} />
         </Route>
+
+        <Route path="shop/cart" element={<CartPage />} />
+        <Route path="shop/cart/checkout" element={<CheckoutPage />} />
+        <Route path="shop/productDetails/:id" element={<ProductDetails />} />
 
         <Route element={<RequireAuth />}>
           <Route path="board" element={<Layout />}>

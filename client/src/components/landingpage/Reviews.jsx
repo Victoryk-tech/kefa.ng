@@ -35,18 +35,9 @@ const Reviews = () => {
     });
   }, []);
   return (
-    <div className="py-4 px-4 md:px-10 w-full h-full">
-      <div
-        data-aos="fade-up"
-        className=" flex flex-col justify-center h-full items-center my-4 md:my-20 lg:my-0"
-      >
-        <div className="text-center py-4">
-          <h1 className="font-bold md:text-2xl text-xl font-poppins">
-            Good news from far away 🥇
-          </h1>
-          <p className="text-lg">Let's see what people think of Kefa</p>
-        </div>
-        <div className="overflow-hidden no-scrollbar slideshow w-[86%] sm:w-[70%]">
+    <div className="py-24 px-4 md:px-6 lg:pl-32  w-full h-full font-oswald">
+      <div className=" flex flex-col justify-center h-full items-center ">
+        <div className="overflow-hidden no-scrollbar slideshow w-[96%] sm:w-[70%]">
           <div
             className="flex w-full items-center slideshowSlider"
             style={{
@@ -59,26 +50,31 @@ const Reviews = () => {
                 <div
                   key={index}
                   style={{}}
-                  className="shrink-0 flex justify-center items-center w-full min-h-full slide "
+                  className="shrink-0 flex flex-col justify-start
+                   items-start w-full min-h-full slide "
                 >
-                  <div className="p-2 rounded">
-                    <p className="sm:text-2xl md:text-2xl text-wrap font-poppins p-3 ">
-                      "...{data.description}"
-                    </p>
-                    <div className="flex items-center justify-center md:justify-start gap-2">
-                      <p className="h-12 md:h-20 w-12 md:w-20 rounded-full flex">
-                        <img
-                          className="h-full w-full object-cover object-top rounded-full"
-                          src={data.image}
-                          alt="image"
-                        />
+                  <div className="pb-8">
+                    <p className="text-lg font-normal">PEOPLE ARE TALKING</p>
+                  </div>
+                  <div className=" rounded flex flex-col  items-start justify-between w-full">
+                    <div className="w-full space-y-5">
+                      <p className="text-[17px] text-wrap font-poppins lg:leading-[32.5px]">
+                        "...{data.description}"
                       </p>
-                      <p className=" gap-2">
-                        <p className="pt-2 font-bold font-poppins">
-                          {data.name}
+
+                      <div className="flex items-center justify-center space-x-3">
+                        <div className=" w-24 h-24 rounded-full">
+                          <img
+                            className="h-full w-full object-contain rounded-full"
+                            src={data.image}
+                            alt="image"
+                          />
+                        </div>
+                        <p className="">
+                          <p className=" font-bold font-poppins">{data.name}</p>
+                          <p className="">{data.title}</p>
                         </p>
-                        <p className="capitalize font-zeyada">{data.title}</p>
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </div>

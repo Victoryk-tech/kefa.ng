@@ -27,7 +27,17 @@ import { TfiFaceSad } from "react-icons/tfi";
 // };
 
 const NotFound = () => {
-  return <div>NotFound</div>;
+  return (
+    <div className="text-xl p-4 flex flex-col justify-center items-center h-screen text-[#6b4343]">
+      // {/* <NotfoundGif/> */}
+      //{" "}
+      <span className="text-3xl font-bold flex items-center">
+        // <TfiFaceSad className="mx-1" />
+        // 404 //{" "}
+      </span>
+      // Page match Found! //{" "}
+    </div>
+  );
 };
 
 export default NotFound;

@@ -1,4 +1,3 @@
-import HeadOption from "../components/HeadOption";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -62,7 +61,6 @@ const Login = () => {
 
   return (
     <div>
-      <HeadOption />
       <section className="bg-gray-50 min-h-screen flex items-start py-10 sm:pt-0 sm:items-center justify-center">
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-3xl p-5 items-center">
           <div className="md:w-1/2 px-8 md:px-16">
