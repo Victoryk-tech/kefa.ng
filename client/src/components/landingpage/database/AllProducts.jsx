@@ -35,7 +35,7 @@ const AllProducts = ({ Product, getProducts }) => {
         </p> */}
           </div>
           <div
-            className="text-[20px] text-center cursor-pointer font-[900] bg-[#492C02] p-[8px] rounded-3xl text-white hover:bg-[#492C02] hover:cursor-pointer transition-none ease-out"
+            className="text-[20px] hover:shadow-lg text-center cursor-pointer font-[900] bg-[#492C02] p-[8px] rounded-3xl text-white hover:bg-[#492C02] hover:cursor-pointer transition-none ease-out"
             onClick={() => addToCart(Product)}
           >
             <BsBag />

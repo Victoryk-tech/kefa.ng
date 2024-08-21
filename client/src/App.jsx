@@ -3,8 +3,6 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ConditionRoute from "./components/ConditionRoute";
 
-import LandingPage from "./pages/LandingPage";
-import Products from "./components/landingpage/Products";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import SignUp from "./pages/SignUp";
@@ -20,17 +18,19 @@ import Orders from "./pages/DashboardPages/Orders";
 import WorkPlan from "./pages/DashboardPages/WorkPlan";
 import Create from "./pages/DashboardPages/Create";
 import Messages from "./pages/DashboardPages/Messages";
-import ProductDetails from "./components/landingpage/ProductDetails";
+import ProductDetails from "./components/Shop/ProductDetails";
 import { ToastContainer, toast } from "react-toastify";
 import { RequireAuth } from "./components/RequireAuth";
 import BottomNavBar from "./components/Shop/BottomNavBar";
 import { UserProfile } from "./pages/UserProfile";
 import Shop from "./pages/Shop";
 import Condition from "./components/Condition";
-import LayoutHead from "./components/landingpage/LayoutHead";
+
 import Landing from "./pages/Landing";
 import Header from "./components/Landing/Header";
 import Footer from "./components/Landing/Footer";
+import ConditionH from "./components/ConditionH";
+import HeadOption from "./components/Shop/HeadOption";
 
 const App = () => {
   return (
@@ -38,6 +38,9 @@ const App = () => {
       <ConditionRoute>
         <Header />
       </ConditionRoute>
+      <ConditionH>
+        <HeadOption />
+      </ConditionH>
       <Routes>
         <Route path="/" element={<Landing />}></Route>
         {/* <Route path="/" element={<LandingPage />}></Route> */}
@@ -53,7 +56,7 @@ const App = () => {
         </Route>
 
         <Route path="shop/cart" element={<CartPage />} />
-        <Route path="shop/cart/checkout" element={<CheckoutPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
         <Route path="shop/productDetails/:id" element={<ProductDetails />} />
 
         <Route element={<RequireAuth />}>

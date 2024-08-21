@@ -1,14 +1,18 @@
 import React, { useContext } from "react";
 import { CartContext } from "../context/ContextProvider";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartProduct from "./CartProduct";
 
 const CartItems = () => {
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   const { cartState } = useContext(CartContext);
   return (
     <div className="w-full h-full px-2 md:px-4 lg:px-20 py-10">
       <div className="text-[11px] flex items-start justify-start font-poppin font-normal md:text-[16px] gap-1 lg:space-x-3 pb-10">
-        <Link to="shop">
+        <Link to="/shop" onClick={scrollToTop}>
           <p>Home</p>
         </Link>
         <p>/</p>
@@ -60,7 +64,7 @@ const CartItems = () => {
                   </button>
                 </div>
 
-                <div className="border-2 p-2 w-full my-14 md:mt-0 md:w-[35%] border-black">
+                <div className="border-2 p-4 md:p-2 w-full my-14 md:mt-0 md:w-[35%] border-black">
                   <div className="flex items-start justify-between border-b-[0.3px] border-black py-4">
                     <p className="font-poppin font-normal text-[16px]">
                       Subtotal
@@ -84,12 +88,13 @@ const CartItems = () => {
                     </p>
                   </div>
 
-                  <Link
-                    to="shop/cart/checkout"
-                    className="bg-[#492C02] hover:bg-transparent rounded-[4px] cursor-pointer text-center ml-20 md:ml-8  text-white hover:text-[#492C02]  hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]"
+                  <NavLink
+                    to="/checkout"
+                    onClick={scrollToTop}
+                    className="bg-[#492C02] hover:bg-transparent rounded-[4px]  text-center ml-20 md:ml-8  text-white hover:text-[#492C02] hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]"
                   >
                     Procced to checkout
-                  </Link>
+                  </NavLink>
                 </div>
               </div>
             </div>
