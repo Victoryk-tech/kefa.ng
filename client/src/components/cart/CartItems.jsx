@@ -84,9 +84,12 @@ const CartItems = () => {
                     </p>
                   </div>
 
-                  <button className="bg-[#492C02] rounded-[4px] cursor-pointer text-center ml-20 md:ml-8  text-white hover:text-[#492C02] hover:bg-white hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]">
-                    <Link to="shop/cart/checkout">Procced to checkout</Link>
-                  </button>
+                  <Link
+                    to="shop/cart/checkout"
+                    className="bg-[#492C02] hover:bg-transparent rounded-[4px] cursor-pointer text-center ml-20 md:ml-8  text-white hover:text-[#492C02]  hover:border-[1px] hover:border-[#492C02] hover:scale-100 transition-all ease-in py-4 md:py-[13px] px-4 w-[53%] md:w-[75%] font-semibold text-[12px]"
+                  >
+                    Procced to checkout
+                  </Link>
                 </div>
               </div>
             </div>
