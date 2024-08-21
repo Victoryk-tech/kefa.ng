@@ -17,8 +17,6 @@ const Conditional = ({ children }) => {
       location.pathname === "/board/plans" ||
       location.pathname === "/board/create" ||
       location.pathname === "/board/messages" ||
-      location.pathname === "/login" ||
-      location.pathname === "/login/signup" ||
       location.pathname === "*"
     ) {
       setDisplay(false);
