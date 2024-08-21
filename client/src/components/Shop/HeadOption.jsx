@@ -150,14 +150,14 @@ const HeadOption = () => {
           </div>
 
           {/* login/signup */}
-          <div className="hidden md:flex items-center justify-center ">
+          <div className="flex items-center justify-center ">
             <Link to="cart" onClick={scrollToTop} className="relative">
               <IoCartOutline size={30} className=" text-amber-950" />
               <h1 className="absolute top-0 right-0 -mt-2 -mr-1 flex justify-center items-center bg-[#492C02] text-white font-semibold text-[14px] w-6 h-5 rounded-full border-2 border-white">
                 {cartState.totalQuantity}
               </h1>
             </Link>
-            <p>/</p>
+
             {/* <NavLink
               to="login"
               onClick={scrollToTop}
