@@ -32,7 +32,7 @@ const getUser = asyncHandler(async (req, res, next) => {
 //getUsersCount
 const getUsersCount = asyncHandler(async (req, res, next) => {
   try {
-    const users = await reg.find({}).count();
+    const users = await reg.find({}).countDocuments();
 
     res.status(200).json(users);
   } catch (err) {

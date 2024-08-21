@@ -22,6 +22,18 @@ const productSchema = mongoose.Schema(
       required: true,
       trim: true,
     },
+    category: {
+      type: String,
+      required: [true, "Please add product category"],
+      trim: true,
+      lowercase: true,
+    },
+    brand: {
+      type: String,
+      required: [true, "Please add product brand"],
+      trim: true,
+      lowercase: true,
+    },
     rating: {
       type: Number,
       required: true,
@@ -30,6 +42,20 @@ const productSchema = mongoose.Schema(
     image: {
       type: String,
       required: true,
+      trim: true,
+    },
+    color: {
+      type: [String],
+      default: "As Seen",
+      trim: true,
+    },
+    size: {
+      type: [String],
+      trim: true,
+    },
+    quantity: {
+      type: Number,
+      required: [true, "Please add product quantity"],
       trim: true,
     },
   },
