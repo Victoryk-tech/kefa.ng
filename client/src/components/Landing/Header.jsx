@@ -70,49 +70,60 @@ const Header = () => {
 
                     <div className="flex flex-col items-center justify-center w-full pt-20">
                       <div className="flex flex-col items-center justify-center text-center gap-8 py-6">
-                        <NavLink
-                          to="/"
-                          className={({ isActive }) =>
-                            isActive ? activeLink : normalLink
-                          }
-                          onClick={scrollToTop}
-                        >
-                          Home
-                        </NavLink>
+                        <span onClick={scrollToTop}>
+                          <NavLink
+                            to="/"
+                            className={({ isActive }) =>
+                              isActive ? activeLink : normalLink
+                            }
+                            onClick={handleNavHome}
+                          >
+                            Home
+                          </NavLink>
+                        </span>
 
-                        <NavLink
-                          to="blog"
-                          onClick={scrollToTop}
-                          className={({ isActive }) =>
-                            isActive ? activeLink : normalLink
-                          }
-                        >
-                          Blog
-                        </NavLink>
-                        <NavLink
-                          to="contact"
-                          onClick={scrollToTop}
-                          className={({ isActive }) =>
-                            isActive ? activeLink : normalLink
-                          }
-                        >
-                          Contact
-                        </NavLink>
-                        <NavLink
-                          to="about"
-                          onClick={scrollToTop}
-                          className={({ isActive }) =>
-                            isActive ? activeLink : normalLink
-                          }
-                        >
-                          About
-                        </NavLink>
+                        <span onClick={scrollToTop}>
+                          <NavLink
+                            to="blog"
+                            onClick={handleNavHome}
+                            className={({ isActive }) =>
+                              isActive ? activeLink : normalLink
+                            }
+                          >
+                            Blog
+                          </NavLink>
+                        </span>
+                        <span onClick={scrollToTop}>
+                          {" "}
+                          <NavLink
+                            to="contact"
+                            onClick={handleNavHome}
+                            className={({ isActive }) =>
+                              isActive ? activeLink : normalLink
+                            }
+                          >
+                            Contact
+                          </NavLink>
+                        </span>
+                        <span onClick={scrollToTop}>
+                          {" "}
+                          <NavLink
+                            to="about"
+                            onClick={handleNavHome}
+                            className={({ isActive }) =>
+                              isActive ? activeLink : normalLink
+                            }
+                          >
+                            About
+                          </NavLink>
+                        </span>
                       </div>
 
-                      <div className="space-y-8 py-4">
+                      <div onClick={scrollToTop} className="space-y-8 py-4">
                         <Link
                           to="login"
                           href=""
+                          onClick={handleNavHome}
                           className="font-bold border-[#6b4343] border-[0.3px] px-24 py-4 rounded-xl text-[#6b4343] hover:shadow-[0_0_20px_#6b4343] hover:bg-[#6b4343] hover:text-white transition-all ease-out shadow-sm cursor-pointer"
                         >
                           Log In
